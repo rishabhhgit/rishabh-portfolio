@@ -1,64 +1,59 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { RevealText } from '@/components/ui/RevealText';
+import React from "react";
+import { RevealText } from "@/components/ui/RevealText";
 
 const focusAreas = [
-  'AI products & copilots',
-  'Developer tools',
-  'Real-time data visualization',
-  'Geospatial interfaces',
-  'Design systems & workflows',
+  "AI products & copilots",
+  "Developer tools & IDEs",
+  "Real-time data visualization",
+  "Geospatial interfaces",
+  "Workflow automation",
 ];
 
 export function About() {
   return (
-    <section id="about" className="py-24 md:py-32 border-t border-[#18181b] section-container">
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-start">
-        {/* Statement */}
-        <div className="md:col-span-7 space-y-6">
+    <section id="about" className="py-32 md:py-48 border-t border-[#E5E7EB] section-container">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        {/* Main statement */}
+        <div className="lg:col-span-7 space-y-12">
           <RevealText>
             <div className="eyebrow">About</div>
           </RevealText>
 
           <RevealText delay={80}>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-normal text-white leading-snug tracking-tight">
-              Rishabh Jain is a UI/UX and product designer who builds what he designs — shaping
-              complex, data-heavy software into interfaces that feel calm, precise and considered.
+            <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] font-bold text-[#111827] tracking-[-0.03em] leading-[1.15]">
+              I'm Rishabh — a UI/UX-focused designer and developer interested in turning complex technical systems into clear, intuitive digital experiences.
             </h2>
           </RevealText>
 
           <RevealText delay={160}>
-            <p className="text-[#a1a1aa] text-base leading-relaxed max-w-xl">
-              The work sits where product thinking meets engineering: AI-assisted tools, developer
-              environments, real-time dashboards, geospatial views and workflow systems — products
-              where clarity is the hard part.
+            <p className="text-[#4B5563] text-lg leading-[1.7] max-w-2xl">
+              I operate at the intersection of product thinking and engineering. My work focuses on environments where clarity is difficult to achieve — AI-assisted tools, dense real-time dashboards, and multi-layered geospatial views.
             </p>
           </RevealText>
         </div>
 
-        {/* Meta column */}
-        <div className="md:col-span-4 md:col-start-9 space-y-8">
-          <RevealText delay={240} className="space-y-4">
-            <div className="eyebrow">Focus</div>
-            <ul className="border-t border-[#18181b]">
+        {/* Metadata columns */}
+        <div className="lg:col-span-4 lg:col-start-9 space-y-12">
+          <RevealText delay={200} className="space-y-5">
+            <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#9CA3AF] border-b border-[#E5E7EB] pb-3">Focus Areas</div>
+            <ul className="space-y-3">
               {focusAreas.map((area, i) => (
                 <li
                   key={area}
-                  className="flex items-center justify-between gap-4 py-2.5 border-b border-[#141417] text-sm text-[#a1a1aa] hover:text-white transition-colors duration-200"
+                  className="flex items-center gap-3 text-sm text-[#4B5563] hover:text-[#111827] transition-colors duration-300"
                 >
+                  <span className="font-mono text-[10px] text-[#9CA3AF]">0{i + 1}</span>
                   <span>{area}</span>
-                  <span className="font-mono text-[10px] text-[#3f3f46]">
-                    0{i + 1}
-                  </span>
                 </li>
               ))}
             </ul>
           </RevealText>
 
-          <RevealText delay={320} className="pt-2 space-y-2">
-            <div className="eyebrow">Education</div>
-            <div className="text-base font-medium text-white leading-snug">
+          <RevealText delay={280} className="space-y-5">
+            <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#9CA3AF] border-b border-[#E5E7EB] pb-3">Education</div>
+            <div className="text-[15px] font-medium text-[#111827] leading-snug">
               Netaji Subhas University of Technology
             </div>
           </RevealText>

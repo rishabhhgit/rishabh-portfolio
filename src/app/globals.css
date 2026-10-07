@@ -1,23 +1,23 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #060608;
-  --color-bg-elevated: #0c0c0f;
-  --color-bg-surface: #111114;
-  --color-bg-hover: #18181c;
-  --color-border: #1a1a1f;
-  --color-border-subtle: #131316;
-  --color-border-hover: #2a2a30;
+  --color-bg: #FDFDFC;
+  --color-bg-elevated: #FFFFFF;
+  --color-bg-surface: #F3F4F6;
+  --color-bg-hover: #E5E7EB;
+  --color-border: #E5E7EB;
+  --color-border-subtle: #F3F4F6;
+  --color-border-hover: #D1D5DB;
 
-  --color-text-primary: #f0f0f2;
-  --color-text-secondary: #8a8a96;
-  --color-text-muted: #4a4a56;
-  --color-text-ghost: #2a2a34;
+  --color-text-primary: #111827;
+  --color-text-secondary: #4B5563;
+  --color-text-muted: #9CA3AF;
+  --color-text-ghost: #D1D5DB;
 
-  --color-accent: #c8a2ff;
+  --color-accent: #2563EB;
   --color-accent-dim: #9b6fd4;
-  --color-accent-surface: rgba(200, 162, 255, 0.06);
-  --color-accent-border: rgba(200, 162, 255, 0.15);
+  --color-accent-surface: rgba(37, 99, 235, 0.06);
+  --color-accent-border: rgba(37, 99, 235, 0.15);
 
   --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: var(--font-jetbrains-mono), ui-monospace, "SF Mono", monospace;
@@ -41,15 +41,15 @@ html {
 }
 
 body {
-  background-color: #060608;
-  color: #f0f0f2;
+  background-color: #FDFDFC;
+  color: #111827;
   font-family: var(--font-sans);
   line-height: 1.6;
   overflow-x: hidden;
 }
 
 ::selection {
-  background-color: rgba(200, 162, 255, 0.25);
+  background-color: rgba(37, 99, 235, 0.25);
   color: #ffffff;
 }
 
@@ -92,7 +92,7 @@ p {
   line-height: 1.5;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #4a4a56;
+  color: #9CA3AF;
 }
 
 /* ————— Tech tag ————— */
@@ -100,19 +100,19 @@ p {
   display: inline-flex;
   align-items: center;
   padding: 0.15rem 0.55rem;
-  border: 1px solid #1a1a1f;
-  background-color: #0c0c0f;
+  border: 1px solid #E5E7EB;
+  background-color: #FFFFFF;
   border-radius: 3px;
   font-size: 0.65rem;
   font-family: var(--font-mono);
-  color: #8a8a96;
+  color: #4B5563;
   letter-spacing: 0.02em;
   transition: border-color 0.3s, color 0.3s;
 }
 
 .tech-tag:hover {
-  border-color: #2a2a30;
-  color: #c8a2ff;
+  border-color: #D1D5DB;
+  color: #2563EB;
 }
 
 /* ————— Scrollbar ————— */
@@ -120,19 +120,19 @@ p {
   width: 4px;
 }
 ::-webkit-scrollbar-track {
-  background: #060608;
+  background: #FDFDFC;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1a1a1f;
+  background: #E5E7EB;
   border-radius: 2px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #2a2a30;
+  background: #D1D5DB;
 }
 
 /* ————— Dot pattern ————— */
 .dot-pattern {
-  background-image: radial-gradient(rgba(200, 162, 255, 0.04) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(37, 99, 235, 0.04) 1px, transparent 1px);
   background-size: 32px 32px;
 }
 
@@ -217,7 +217,7 @@ p {
   bottom: -4px;
   width: 100%;
   height: 1px;
-  background-color: #c8a2ff;
+  background-color: #2563EB;
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -233,12 +233,12 @@ p {
 .section-divider {
   border: none;
   height: 1px;
-  background: linear-gradient(90deg, transparent, #1a1a1f 20%, #1a1a1f 80%, transparent);
+  background: linear-gradient(90deg, transparent, #E5E7EB 20%, #E5E7EB 80%, transparent);
 }
 
 /* ————— Focus ————— */
 :focus-visible {
-  outline: 2px solid #c8a2ff;
+  outline: 2px solid #2563EB;
   outline-offset: 3px;
   border-radius: 2px;
 }

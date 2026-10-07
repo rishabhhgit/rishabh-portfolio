@@ -23,7 +23,7 @@ export function GammaCodeMockup() {
       {/* Editor Main Layout */}
       <div className="grid grid-cols-12 min-h-[320px]">
         {/* Left Sidebar */}
-        <div className="col-span-3 bg-[#111114] border-r border-[#27272a] p-3 space-y-3 font-mono text-[11px] hidden sm:block">
+        <div className="col-span-3 bg-[#F3F4F6] border-r border-[#27272a] p-3 space-y-3 font-mono text-[11px] hidden sm:block">
           <div className="text-[#71717a] font-bold uppercase tracking-wider text-[10px]">Explorer</div>
           <div className="space-y-1.5">
             <div className="flex items-center gap-1.5 text-[#f4f4f5]">

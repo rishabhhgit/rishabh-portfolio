@@ -47,7 +47,7 @@ export default function Navigation() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-[#060608]/85 backdrop-blur-2xl border-b border-[#1a1a1f]/60"
+            ? "bg-[#FDFDFC]/85 backdrop-blur-2xl border-b border-[#E5E7EB]/60"
             : "bg-transparent"
         }`}
       >
@@ -55,7 +55,7 @@ export default function Navigation() {
           {/* Logo */}
           <a
             href="#"
-            className="relative font-semibold text-base tracking-[-0.02em] text-[#f0f0f2] hover:text-[#c8a2ff] transition-colors duration-300"
+            className="relative font-semibold text-base tracking-[-0.02em] text-[#111827] hover:text-[#2563EB] transition-colors duration-300"
             onClick={(e) => {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: "smooth" });
@@ -75,8 +75,8 @@ export default function Navigation() {
                 data-active={activeSection === link.href.slice(1)}
                 className={`text-[13px] tracking-[0.02em] link-underline transition-colors duration-300 ${
                   activeSection === link.href.slice(1)
-                    ? "text-[#f0f0f2]"
-                    : "text-[#8a8a96] hover:text-[#f0f0f2]"
+                    ? "text-[#111827]"
+                    : "text-[#4B5563] hover:text-[#111827]"
                 }`}
               >
                 {link.label}
@@ -84,9 +84,9 @@ export default function Navigation() {
             ))}
 
             {/* Availability indicator */}
-            <div className="flex items-center gap-2 pl-6 border-l border-[#1a1a1f]">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#c8a2ff] animate-pulse-subtle" />
-              <span className="text-[11px] font-mono text-[#4a4a56] tracking-wider">
+            <div className="flex items-center gap-2 pl-6 border-l border-[#E5E7EB]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB] animate-pulse-subtle" />
+              <span className="text-[11px] font-mono text-[#9CA3AF] tracking-wider">
                 Available
               </span>
             </div>
@@ -100,12 +100,12 @@ export default function Navigation() {
             aria-expanded={mobileOpen}
           >
             <span
-              className={`block w-5 h-[1.5px] bg-[#f0f0f2] transition-all duration-300 origin-center ${
+              className={`block w-5 h-[1.5px] bg-[#111827] transition-all duration-300 origin-center ${
                 mobileOpen ? "rotate-45 translate-y-[3.25px]" : ""
               }`}
             />
             <span
-              className={`block w-5 h-[1.5px] bg-[#f0f0f2] transition-all duration-300 origin-center ${
+              className={`block w-5 h-[1.5px] bg-[#111827] transition-all duration-300 origin-center ${
                 mobileOpen ? "-rotate-45 -translate-y-[3.25px]" : ""
               }`}
             />
@@ -121,7 +121,7 @@ export default function Navigation() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-[#060608]/98 backdrop-blur-3xl md:hidden"
+            className="fixed inset-0 z-40 bg-[#FDFDFC]/98 backdrop-blur-3xl md:hidden"
           >
             <div className="flex flex-col items-start justify-center h-full section-container">
               {navLinks.map((link, i) => (
@@ -132,7 +132,7 @@ export default function Navigation() {
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.08, duration: 0.4 }}
-                  className="text-4xl sm:text-5xl font-semibold text-[#f0f0f2] hover:text-[#c8a2ff] transition-colors duration-300 py-4 tracking-tight"
+                  className="text-4xl sm:text-5xl font-semibold text-[#111827] hover:text-[#2563EB] transition-colors duration-300 py-4 tracking-tight"
                 >
                   {link.label}
                 </motion.a>
@@ -144,8 +144,8 @@ export default function Navigation() {
                 transition={{ delay: 0.4 }}
                 className="mt-12 flex items-center gap-2"
               >
-                <span className="w-2 h-2 rounded-full bg-[#c8a2ff]" />
-                <span className="text-sm font-mono text-[#4a4a56]">
+                <span className="w-2 h-2 rounded-full bg-[#2563EB]" />
+                <span className="text-sm font-mono text-[#9CA3AF]">
                   Available for opportunities
                 </span>
               </motion.div>

@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { RevealText } from '@/components/ui/RevealText';
+import React, { useState } from "react";
+import { RevealText } from "@/components/ui/RevealText";
 
 const steps = [
   { number: "01", name: "Understand", desc: "Frame the problem — users, constraints, and what success looks like.", artifact: "Problem framing" },
@@ -13,64 +13,71 @@ const steps = [
 ];
 
 export function DesignProcess() {
+  const [activeStep, setActiveStep] = useState<number | null>(null);
+
   return (
-    <section id="process" className="py-24 md:py-32 border-t border-[#18181b] section-container">
-      <div className="max-w-3xl mb-12 md:mb-16 space-y-4">
+    <section id="process" className="py-32 md:py-48 border-t border-[#E5E7EB] section-container">
+      <div className="max-w-3xl mb-16 md:mb-24 space-y-8">
         <RevealText>
           <div className="eyebrow">Methodology</div>
         </RevealText>
         <RevealText delay={80}>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-[-0.025em]">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#111827] tracking-[-0.03em] leading-tight">
             Design Process
           </h2>
         </RevealText>
         <RevealText delay={160}>
-          <p className="text-[#a1a1aa] text-base leading-relaxed">
+          <p className="text-[#4B5563] text-base leading-relaxed">
             A repeatable path from ambiguity to a shipped interface.
           </p>
         </RevealText>
       </div>
 
       <RevealText delay={120}>
-        <ol className="relative space-y-8 lg:space-y-0 lg:grid lg:grid-cols-6 lg:gap-6">
-          {/* Vertical connector (mobile / tablet) */}
-          <div
-            aria-hidden="true"
-            className="absolute left-[5px] top-2 bottom-2 w-px bg-gradient-to-b from-[#27272a] via-[#1e1e22] to-transparent lg:hidden"
-          />
-          {/* Horizontal connector (desktop) */}
-          <div
-            aria-hidden="true"
-            className="hidden lg:block absolute left-0 right-0 top-[5px] h-px bg-gradient-to-r from-[#27272a] via-[#1e1e22] to-transparent"
-          />
+        <div className="relative">
+          {/* Connecting line background */}
+          <div className="hidden lg:block absolute top-[28px] left-0 w-full h-[1px] bg-[#E5E7EB]" />
+          
+          <div className="grid grid-cols-1 lg:grid-cols-6 gap-8 lg:gap-4 relative z-10">
+            {steps.map((step, index) => (
+              <div 
+                key={step.number}
+                className="relative flex flex-row lg:flex-col items-start gap-6 lg:gap-6 group"
+                onMouseEnter={() => setActiveStep(index)}
+                onMouseLeave={() => setActiveStep(null)}
+              >
+                {/* Node */}
+                <div className="relative shrink-0">
+                  <div className="hidden lg:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-[#FDFDFC] border border-[#E5E7EB] z-0" />
+                  <div className={`relative z-10 w-3 h-3 rounded-full border border-[#9CA3AF] bg-[#FFFFFF] transition-all duration-300 lg:mx-auto mt-2 lg:mt-0 ${
+                    activeStep === index ? 'border-[#2563EB] bg-[#2563EB] shadow-[0_0_12px_rgba(37,99,235,0.6)] scale-125' : 'group-hover:border-[#2563EB]'
+                  }`} />
+                  {/* Mobile connecting line */}
+                  {index !== steps.length - 1 && (
+                    <div className="absolute top-6 left-1.5 bottom-[-32px] w-[1px] bg-[#E5E7EB] lg:hidden" />
+                  )}
+                </div>
 
-          {steps.map((step, index) => (
-            <li
-              key={step.number}
-              className="group relative pl-10 lg:pl-0 lg:pt-8"
-              style={{ '--step-index': index } as React.CSSProperties}
-            >
-              {/* Step dot */}
-              <span
-                aria-hidden="true"
-                className="absolute left-0 top-1.5 lg:top-0 w-[11px] h-[11px] rounded-full border border-[#3f3f46] bg-[#0f0f11] transition-all duration-300 group-hover:border-emerald-400 group-hover:bg-emerald-400 group-hover:shadow-[0_0_12px_rgba(16,185,129,0.5)]"
-              />
-
-              <div className="flex items-baseline gap-3 lg:block">
-                <span className="font-mono text-xs text-emerald-400">{step.number}</span>
-                <h3 className="text-lg font-bold text-white tracking-tight lg:mt-2 lg:mb-2">
-                  {step.name}
-                </h3>
+                {/* Content */}
+                <div className="flex-1 space-y-2 lg:text-center">
+                  <div className={`font-mono text-xs transition-colors duration-300 ${activeStep === index ? 'text-[#2563EB]' : 'text-[#9CA3AF] group-hover:text-[#4B5563]'}`}>
+                    {step.number}
+                  </div>
+                  <h3 className={`text-lg font-bold tracking-tight transition-colors duration-300 ${activeStep === index ? 'text-[#111827]' : 'text-[#4B5563] group-hover:text-[#111827]'}`}>
+                    {step.name}
+                  </h3>
+                  
+                  {/* Artifact reveal on hover */}
+                  <div className={`overflow-hidden transition-all duration-300 ${activeStep === index ? 'max-h-24 opacity-100 mt-3' : 'max-h-0 opacity-0 lg:max-h-24 lg:opacity-100 lg:mt-3'}`}>
+                    <div className="inline-block px-3 py-1.5 rounded bg-[#F3F4F6] border border-[#E5E7EB] text-[10px] font-mono text-[#2563EB] uppercase tracking-widest">
+                      {step.artifact}
+                    </div>
+                  </div>
+                </div>
               </div>
-              <p className="text-xs text-[#a1a1aa] leading-relaxed max-w-[26ch]">
-                {step.desc}
-              </p>
-              <p className="mt-2 inline-block font-mono text-[10px] uppercase tracking-[0.14em] text-[#52525b] border border-[#1e1e22] bg-[#0f0f11] rounded px-2 py-0.5 transition-colors duration-300 group-hover:text-emerald-400 group-hover:border-emerald-500/40">
-                {step.artifact}
-              </p>
-            </li>
-          ))}
-        </ol>
+            ))}
+          </div>
+        </div>
       </RevealText>
     </section>
   );

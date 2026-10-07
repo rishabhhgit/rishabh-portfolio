@@ -1,41 +1,36 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { useInView } from '@/hooks/useInView';
+import React from "react";
+import { motion } from "framer-motion";
 
 type RevealTextProps = {
   children: React.ReactNode;
   className?: string;
   delay?: number;
-  as?: React.ElementType;
+  as?: any;
 };
 
 export const RevealText = ({
   children,
-  className = '',
+  className = "",
   delay = 0,
-  as: Component = 'div',
+  as = "div",
 }: RevealTextProps) => {
-  const [ref, inView] = useInView({ threshold: 0.15 });
-
-  const prefersReducedMotion =
-    typeof window !== 'undefined' &&
-    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  const revealed = inView || prefersReducedMotion;
-
-  const style: React.CSSProperties = {
-    transitionDuration: '800ms',
-    transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
-    transitionProperty: 'transform, opacity',
-    transitionDelay: `${delay}ms`,
-    transform: revealed ? 'translateY(0)' : 'translateY(30px)',
-    opacity: revealed ? 1 : 0,
-  };
+  const MotionComponent = motion(as);
 
   return (
-    <Component ref={ref} className={className} style={style}>
+    <MotionComponent
+      className={className}
+      initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
+      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      viewport={{ once: true, margin: "-10% 0px -10% 0px" }}
+      transition={{
+        duration: 1.2,
+        ease: [0.16, 1, 0.3, 1], // Custom cubic-bezier for a smooth, premium feel
+        delay: delay / 1000,
+      }}
+    >
       {children}
-    </Component>
+    </MotionComponent>
   );
 };

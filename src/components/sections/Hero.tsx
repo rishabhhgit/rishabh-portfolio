@@ -35,7 +35,7 @@ export function Hero() {
       for (let i = 0; i < cols; i++) {
         const x = i * spacing;
         const opacity = 0.02 + Math.sin(time + i * 0.3) * 0.008;
-        ctx.strokeStyle = `rgba(200, 162, 255, ${opacity})`;
+        ctx.strokeStyle = `rgba(37, 99, 235, ${opacity})`;
         ctx.lineWidth = 0.5;
         ctx.beginPath();
         ctx.moveTo(x, 0);
@@ -47,7 +47,7 @@ export function Hero() {
       for (let j = 0; j < rows; j++) {
         const y = j * spacing;
         const opacity = 0.02 + Math.sin(time + j * 0.3) * 0.008;
-        ctx.strokeStyle = `rgba(200, 162, 255, ${opacity})`;
+        ctx.strokeStyle = `rgba(37, 99, 235, ${opacity})`;
         ctx.lineWidth = 0.5;
         ctx.beginPath();
         ctx.moveTo(0, y);
@@ -66,7 +66,7 @@ export function Hero() {
           );
           const pulse = Math.sin(time * 2 - dist * 0.003) * 0.5 + 0.5;
           const dotOpacity = 0.03 + pulse * 0.04;
-          ctx.fillStyle = `rgba(200, 162, 255, ${dotOpacity})`;
+          ctx.fillStyle = `rgba(37, 99, 235, ${dotOpacity})`;
           ctx.beginPath();
           ctx.arc(x, y, 1.2, 0, Math.PI * 2);
           ctx.fill();
@@ -96,12 +96,12 @@ export function Hero() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const },
     },
   };
 
   return (
-    <section className="relative min-h-[92vh] flex flex-col justify-center pt-28 pb-20 section-container overflow-hidden">
+    <section className="relative min-h-[95vh] flex flex-col justify-center pt-32 pb-24 section-container overflow-hidden">
       {/* Animated grid canvas */}
       <canvas
         ref={canvasRef}
@@ -112,25 +112,25 @@ export function Hero() {
       {/* Radial glow */}
       <div
         aria-hidden="true"
-        className="absolute -top-32 left-1/4 w-[800px] h-[500px] rounded-full bg-[radial-gradient(closest-side,rgba(200,162,255,0.04),transparent)] pointer-events-none"
+        className="absolute -top-32 left-1/4 w-[800px] h-[500px] rounded-full bg-[radial-gradient(closest-side,rgba(37,99,235,0.04),transparent)] pointer-events-none"
       />
 
       <motion.div
-        className="relative z-10 max-w-4xl space-y-7"
+        className="relative z-10 max-w-4xl space-y-10"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
         {/* Small positioning label */}
         <motion.div variants={childVariants}>
-          <div className="inline-flex items-center gap-3 text-[11px] font-mono tracking-[0.14em] text-[#4a4a56]">
+          <div className="inline-flex items-center gap-3 text-[11px] font-mono tracking-[0.14em] text-[#9CA3AF]">
             <span className="uppercase">
               UI/UX
-              <span className="text-[#2a2a34] mx-1.5">·</span>
+              <span className="text-[#D1D5DB] mx-1.5">·</span>
               Product Design
-              <span className="text-[#2a2a34] mx-1.5">·</span>
+              <span className="text-[#D1D5DB] mx-1.5">·</span>
               Interaction Design
-              <span className="text-[#2a2a34] mx-1.5">·</span>
+              <span className="text-[#D1D5DB] mx-1.5">·</span>
               Creative Development
             </span>
           </div>
@@ -139,18 +139,18 @@ export function Hero() {
         {/* Main statement */}
         <motion.h1
           variants={childVariants}
-          className="text-[clamp(2.5rem,6vw,5.5rem)] font-bold text-[#f0f0f2] tracking-[-0.035em] leading-[1.05] max-w-[18ch]"
+          className="text-[clamp(2.5rem,6vw,5.5rem)] font-bold text-[#111827] tracking-[-0.035em] leading-[1.05] max-w-[18ch]"
         >
           Designing interfaces{" "}
           <br className="hidden sm:block" />
           for complex{" "}
-          <span className="text-[#c8a2ff]">digital products.</span>
+          <span className="text-[#2563EB]">digital products.</span>
         </motion.h1>
 
         {/* Supporting narrative */}
         <motion.p
           variants={childVariants}
-          className="text-base sm:text-lg text-[#8a8a96] font-normal leading-[1.7] max-w-[52ch]"
+          className="text-base sm:text-lg text-[#4B5563] font-normal leading-[1.7] max-w-[52ch]"
         >
           I design and build interfaces for AI products, developer tools, real-time systems, and data-driven platforms — turning complex technology into clear, considered experiences.
         </motion.p>
@@ -162,7 +162,7 @@ export function Hero() {
         >
           <a
             href="#work"
-            className="group inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#f0f0f2] text-[#060608] font-semibold text-sm hover:bg-[#c8a2ff] transition-all duration-300"
+            className="group inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#111827] text-[#FDFDFC] font-semibold text-sm hover:bg-[#2563EB] transition-all duration-300"
           >
             Explore selected work
             <svg
@@ -180,7 +180,7 @@ export function Hero() {
             href="https://github.com/rishabhhgit"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[#1a1a1f] bg-transparent text-[#8a8a96] font-medium text-sm hover:text-[#f0f0f2] hover:border-[#2a2a30] transition-all duration-300"
+            className="group inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[#E5E7EB] bg-transparent text-[#4B5563] font-medium text-sm hover:text-[#111827] hover:border-[#D1D5DB] transition-all duration-300"
           >
             GitHub
             <svg
@@ -203,8 +203,8 @@ export function Hero() {
         transition={{ delay: 1.5, duration: 0.8 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2"
       >
-        <div className="w-[1px] h-10 bg-gradient-to-b from-transparent via-[#2a2a34] to-transparent relative overflow-hidden">
-          <div className="absolute w-full h-3 bg-[#c8a2ff]/40 animate-[float_2.5s_ease-in-out_infinite]" />
+        <div className="w-[1px] h-10 bg-gradient-to-b from-transparent via-[#D1D5DB] to-transparent relative overflow-hidden">
+          <div className="absolute w-full h-3 bg-[#2563EB]/40 animate-[float_2.5s_ease-in-out_infinite]" />
         </div>
       </motion.div>
     </section>

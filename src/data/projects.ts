@@ -7,7 +7,6 @@ export interface Project {
   image: string;
   githubUrl: string;
   technology: string[];
-  aiTools?: string[];
   designChallenge: string;
   designApproach: string;
   interfaceDecisions: string[];
@@ -39,7 +38,6 @@ export const projects: Project[] = [
       "Zod",
       "Turborepo",
     ],
-    aiTools: ["Claude", "Cline", "Kilo Code", "GitHub Copilot"],
     designChallenge:
       "Modern AI coding tools combine several complex systems — code editing, AI interaction, terminal execution, file management, Git workflows, context management, permissions, and session recovery. The design challenge is making all of these feel like one coherent, keyboard-first product without overwhelming information density.",
     designApproach:
@@ -90,7 +88,6 @@ export const projects: Project[] = [
       "OpenSky API",
       "GeoJSON",
     ],
-    aiTools: ["Claude", "GitHub Copilot"],
     designChallenge:
       "Visualizing thousands of concurrently moving entities while maintaining UI responsiveness and cognitive clarity. The interface must handle extreme information density — aircraft positions, altitudes, speeds, routes, and states — without becoming an unintelligible scatter of data points.",
     designApproach:
@@ -140,7 +137,6 @@ export const projects: Project[] = [
       "Trigger.dev",
       "Gemini API",
     ],
-    aiTools: ["Claude", "Kilo Code"],
     designChallenge:
       "Translating complex backend execution logic — DAG validation, parallel processing, error propagation, and state management — into an approachable visual canvas that non-technical creators can compose workflows on without understanding the underlying orchestration.",
     designApproach:
@@ -178,7 +174,7 @@ export const projects: Project[] = [
     title: "Eazeworkflow",
     subtitle: "Multi-Module Productivity Platform",
     description:
-      "An integrated productivity suite unifying task management, coding analytics with LeetCode tracking, AI-assisted content generation, job application tracking, and financial management into a single coherent dashboard experience.",
+      "An integrated productivity suite unifying task management, coding analytics with LeetCode tracking, AI content generation, job application tracking, and financial management into a single coherent dashboard experience.",
     category: "Productivity · Dashboard · SaaS",
     image: "/projects/eazeworkflow.jpg",
     githubUrl: "https://github.com/rishabhhgit/dev-EazeWorkflow",
@@ -192,7 +188,6 @@ export const projects: Project[] = [
       "JWT",
       "Gemini API",
     ],
-    aiTools: ["Claude", "GitHub Copilot"],
     designChallenge:
       "Harmonizing six distinct product modules — tasks, code analytics, AI features, job tracking, finance, and LeetCode tracking — into a cohesive dashboard that doesn't feel like six different apps bolted together. The core question: how do you make unrelated productivity functions feel like one coherent product?",
     designApproach:
@@ -207,7 +202,7 @@ export const projects: Project[] = [
       "Client-side routing provides instantaneous module switching without full-page reloads.",
       "Interactive charts with contextual tooltips on hover reveal detailed breakdowns.",
       "Consistent micro-interactions for form elements — inputs, toggles, selections — across all modules.",
-      "AI-assisted features use a unified interaction pattern regardless of the module they appear in.",
+      "AI features use a unified interaction pattern regardless of the module they appear in.",
     ],
     informationArchitecture: [
       "Dashboard Overview → Module Cards → Quick Actions → Drill-Down",

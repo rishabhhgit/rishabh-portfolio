@@ -84,25 +84,6 @@ export function ProjectShowcase({ project, index }: ProjectShowcaseProps) {
             ))}
           </div>
 
-          {/* AI tools used */}
-          {project.aiTools && project.aiTools.length > 0 && (
-            <div className="flex items-center gap-3 pt-2">
-              <span className="text-[10px] font-mono text-ink-dim uppercase tracking-[0.15em]">
-                AI-Assisted
-              </span>
-              <div className="flex flex-wrap gap-2">
-                {project.aiTools.map((tool) => (
-                  <span
-                    key={tool}
-                    className="text-[10px] font-mono px-2 py-1 rounded border border-accent/15 bg-accent/5 text-accent/90 tracking-wide"
-                  >
-                    {tool}
-                  </span>
-                ))}
-              </div>
-            </div>
-          )}
-
           {/* Actions */}
           <div className="flex items-center gap-4 pt-6">
             <Link

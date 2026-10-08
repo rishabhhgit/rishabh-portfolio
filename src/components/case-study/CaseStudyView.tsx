@@ -87,7 +87,6 @@ export function CaseStudyView({ project, study, nextProject }: CaseStudyViewProp
   const meta = [
     { label: "Role", value: study.role },
     { label: "Category", value: project.category },
-    { label: "AI-Assisted", value: project.aiTools?.join(" · ") || "—" },
     { label: "Source", value: "GitHub" },
   ];
 
@@ -482,16 +481,6 @@ export function CaseStudyView({ project, study, nextProject }: CaseStudyViewProp
                     {project.technology.join(" · ")}
                   </span>
                 </div>
-                {project.aiTools && project.aiTools.length > 0 && (
-                  <div className="px-5 py-4 flex flex-col sm:flex-row sm:items-baseline gap-x-4 gap-y-2">
-                    <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-ink-dim sm:w-24 shrink-0">
-                      AI tools
-                    </span>
-                    <span className="text-sm text-ink-soft">
-                      {project.aiTools.join(" · ")}
-                    </span>
-                  </div>
-                )}
                 <div className="px-5 py-4 flex flex-col sm:flex-row sm:items-baseline gap-x-4 gap-y-2">
                   <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-ink-dim sm:w-24 shrink-0">
                     Source

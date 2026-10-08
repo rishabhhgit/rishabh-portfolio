@@ -28,29 +28,29 @@ const principles = [
 
 export function HowIThink() {
   return (
-    <section id="thinking" className="py-32 md:py-48 border-t border-[#E5E7EB] section-container">
+    <section id="thinking" className="py-32 md:py-48 border-t border-rule section-container">
       <div className="max-w-3xl mb-16 md:mb-24 space-y-8">
         <RevealText>
           <div className="eyebrow">Product Thinking</div>
         </RevealText>
         <RevealText delay={80}>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#111827] tracking-[-0.03em] leading-tight max-w-[20ch]">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink tracking-[-0.03em] leading-tight max-w-[20ch]">
             How I approach complex interfaces.
           </h2>
         </RevealText>
       </div>
 
-      <div className="border-t border-[#E5E7EB]">
+      <div className="border-t border-rule">
         {principles.map((item, index) => (
           <RevealText key={item.number} delay={index * 70}>
-            <div className="group grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 py-8 md:py-10 border-b border-[#E5E7EB] transition-colors duration-500 hover:bg-[#FFFFFF]">
-              <div className="md:col-span-1 font-mono text-sm text-[#9CA3AF] group-hover:text-[#2563EB] transition-colors duration-300 md:pl-4">
+            <div className="group grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 py-8 md:py-10 border-b border-rule transition-colors duration-500 hover:bg-surface">
+              <div className="md:col-span-1 font-mono text-sm text-ink-dim group-hover:text-accent transition-colors duration-300 md:pl-4">
                 {item.number}
               </div>
-              <h3 className="md:col-span-4 text-xl md:text-2xl font-bold text-[#111827] tracking-tight group-hover:text-[#2563EB] transition-colors duration-300">
+              <h3 className="md:col-span-4 text-xl md:text-2xl font-bold text-ink tracking-tight group-hover:text-accent transition-colors duration-300">
                 {item.title}
               </h3>
-              <p className="md:col-span-7 text-[15px] text-[#4B5563] leading-[1.7] max-w-2xl md:pr-4">
+              <p className="md:col-span-7 text-[15px] text-ink-soft leading-[1.7] max-w-2xl md:pr-4">
                 {item.description}
               </p>
             </div>

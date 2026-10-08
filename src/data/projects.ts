@@ -27,7 +27,7 @@ export const projects: Project[] = [
     description:
       "A desktop IDE that weaves AI assistance into the editor, terminal, and file system — so developers can navigate complex codebases without losing context. Built with Electron and Monaco, integrating multiple LLM providers for intelligent code generation, refactoring, and execution.",
     category: "AI · Developer Tools · Desktop",
-    image: "/projects/gamma-code.png",
+    image: "/projects/gamma-code.jpg",
     githubUrl: "https://github.com/rishabhhgit/GammaCode",
     technology: [
       "React",
@@ -79,7 +79,7 @@ export const projects: Project[] = [
     description:
       "A geospatial intelligence platform visualizing 6,500+ aircraft across 30+ countries in real time. Built on MapLibre GL with multi-layer caching and asynchronous data ingestion spanning 900+ global map tiles.",
     category: "Geospatial · Real-Time Data · Visualization",
-    image: "/projects/aerotrack.png",
+    image: "/projects/aerotrack.jpg",
     githubUrl: "https://github.com/rishabhhgit/AeroTrack",
     technology: [
       "React",
@@ -130,7 +130,7 @@ export const projects: Project[] = [
     description:
       "A node-based visual editor for constructing, validating, and executing complex AI and media processing workflows. Uses a DAG architecture with drag-and-drop composition, real-time validation, and background execution via Trigger.dev.",
     category: "Product Design · Workflow · Interaction",
-    image: "/projects/workflow-builder.png",
+    image: "/projects/workflow-builder.jpg",
     githubUrl: "https://github.com/rishabhhgit/Virtual-Workflow-Builder",
     technology: [
       "Next.js",
@@ -180,7 +180,7 @@ export const projects: Project[] = [
     description:
       "An integrated productivity suite unifying task management, coding analytics with LeetCode tracking, AI-assisted content generation, job application tracking, and financial management into a single coherent dashboard experience.",
     category: "Productivity · Dashboard · SaaS",
-    image: "/projects/eazeworkflow.png",
+    image: "/projects/eazeworkflow.jpg",
     githubUrl: "https://github.com/rishabhhgit/dev-EazeWorkflow",
     technology: [
       "React",
@@ -232,7 +232,7 @@ export const projects: Project[] = [
     description:
       "A digital banking application designed around trust — facilitating peer-to-peer transfers, scheduled payments, and transaction history within an interface that communicates security and reliability at every touchpoint.",
     category: "Fintech · Product Design · Security UX",
-    image: "/projects/banking.png",
+    image: "/projects/banking.jpg",
     githubUrl: "https://github.com/rishabhhgit/banking-wallet-mvp",
     technology: [
       "React",
@@ -275,7 +275,7 @@ export const projects: Project[] = [
     description:
       "A digital storefront built around the discovery-to-purchase journey — layered filtering, persistent cart, and a checkout flow designed so every step remains legible and every interaction feels responsive.",
     category: "E-Commerce · Product · Conversion",
-    image: "/projects/ecommerce.png",
+    image: "/projects/ecommerce.jpg",
     githubUrl: "https://github.com/rishabhhgit/scalable-e-commerce-backend",
     technology: [
       "React",

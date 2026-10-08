@@ -1,39 +1,41 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useSyncExternalStore } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { label: "Work", href: "#work" },
-  { label: "Process", href: "#process" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Work", href: "/#work" },
+  { label: "About", href: "/#about" },
+  { label: "Process", href: "/#process" },
+  { label: "Contact", href: "/#contact" },
 ];
 
+const subscribe = (onChange: () => void) => {
+  window.addEventListener("scroll", onChange, { passive: true });
+  return () => window.removeEventListener("scroll", onChange);
+};
+
+const readScrolled = () => window.scrollY > 60;
+
+const readActiveSection = () => {
+  let current = "";
+  for (const link of navLinks) {
+    const id = link.href.slice(2);
+    const el = document.getElementById(id);
+    if (el && el.getBoundingClientRect().top <= 160) current = id;
+  }
+  return current;
+};
+
 export default function Navigation() {
-  const [scrolled, setScrolled] = useState(false);
+  const scrolled = useSyncExternalStore(subscribe, readScrolled, () => false);
+  const activeSection = useSyncExternalStore(
+    subscribe,
+    readActiveSection,
+    () => ""
+  );
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("");
-
-  const handleScroll = useCallback(() => {
-    setScrolled(window.scrollY > 60);
-
-    let current = "";
-    for (const link of navLinks) {
-      const id = link.href.slice(1);
-      const el = document.getElementById(id);
-      if (el && el.getBoundingClientRect().top <= 160) {
-        current = id;
-      }
-    }
-    setActiveSection(current);
-  }, []);
-
-  useEffect(() => {
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [handleScroll]);
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
@@ -47,46 +49,46 @@ export default function Navigation() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-[#FDFDFC]/85 backdrop-blur-2xl border-b border-[#E5E7EB]/60"
-            : "bg-transparent"
+            ? "bg-canvas/85 backdrop-blur-2xl border-b border-rule/70"
+            : "bg-transparent border-b border-transparent"
         }`}
       >
-        <div className="section-container flex items-center justify-between h-16 lg:h-20">
+        <div
+          className={`section-container flex items-center justify-between transition-all duration-500 ${
+            scrolled ? "h-14 lg:h-16" : "h-16 lg:h-20"
+          }`}
+        >
           {/* Logo */}
-          <a
-            href="#"
-            className="relative font-semibold text-base tracking-[-0.02em] text-[#111827] hover:text-[#2563EB] transition-colors duration-300"
-            onClick={(e) => {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: "smooth" });
-              setMobileOpen(false);
-            }}
+          <Link
+            href="/"
+            className="relative font-semibold text-[15px] tracking-[-0.01em] text-ink hover:text-accent transition-colors duration-300"
+            onClick={() => setMobileOpen(false)}
           >
             <span className="hidden sm:inline">Rishabh Jain</span>
             <span className="sm:hidden">RJ</span>
-          </a>
+          </Link>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-9">
+          <div className="hidden md:flex items-center gap-8 lg:gap-9">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
-                data-active={activeSection === link.href.slice(1)}
+                data-active={activeSection === link.href.slice(2)}
                 className={`text-[13px] tracking-[0.02em] link-underline transition-colors duration-300 ${
-                  activeSection === link.href.slice(1)
-                    ? "text-[#111827]"
-                    : "text-[#4B5563] hover:text-[#111827]"
+                  activeSection === link.href.slice(2)
+                    ? "text-ink"
+                    : "text-ink-soft hover:text-ink"
                 }`}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
 
             {/* Availability indicator */}
-            <div className="flex items-center gap-2 pl-6 border-l border-[#E5E7EB]">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB] animate-pulse-subtle" />
-              <span className="text-[11px] font-mono text-[#9CA3AF] tracking-wider">
+            <div className="flex items-center gap-2 pl-6 border-l border-rule">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse-subtle" />
+              <span className="text-[11px] font-mono text-ink-dim tracking-wider">
                 Available
               </span>
             </div>
@@ -100,12 +102,12 @@ export default function Navigation() {
             aria-expanded={mobileOpen}
           >
             <span
-              className={`block w-5 h-[1.5px] bg-[#111827] transition-all duration-300 origin-center ${
+              className={`block w-5 h-[1.5px] bg-ink transition-all duration-300 origin-center ${
                 mobileOpen ? "rotate-45 translate-y-[3.25px]" : ""
               }`}
             />
             <span
-              className={`block w-5 h-[1.5px] bg-[#111827] transition-all duration-300 origin-center ${
+              className={`block w-5 h-[1.5px] bg-ink transition-all duration-300 origin-center ${
                 mobileOpen ? "-rotate-45 -translate-y-[3.25px]" : ""
               }`}
             />
@@ -121,21 +123,24 @@ export default function Navigation() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-[#FDFDFC]/98 backdrop-blur-3xl md:hidden"
+            className="fixed inset-0 z-40 bg-canvas/98 backdrop-blur-3xl md:hidden"
           >
             <div className="flex flex-col items-start justify-center h-full section-container">
               {navLinks.map((link, i) => (
-                <motion.a
+                <motion.div
                   key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.08, duration: 0.4 }}
-                  className="text-4xl sm:text-5xl font-semibold text-[#111827] hover:text-[#2563EB] transition-colors duration-300 py-4 tracking-tight"
                 >
-                  {link.label}
-                </motion.a>
+                  <Link
+                    href={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="block text-4xl sm:text-5xl font-semibold text-ink hover:text-accent transition-colors duration-300 py-4 tracking-tight"
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
               ))}
 
               <motion.div
@@ -144,8 +149,8 @@ export default function Navigation() {
                 transition={{ delay: 0.4 }}
                 className="mt-12 flex items-center gap-2"
               >
-                <span className="w-2 h-2 rounded-full bg-[#2563EB]" />
-                <span className="text-sm font-mono text-[#9CA3AF]">
+                <span className="w-2 h-2 rounded-full bg-accent" />
+                <span className="text-sm font-mono text-ink-dim">
                   Available for opportunities
                 </span>
               </motion.div>

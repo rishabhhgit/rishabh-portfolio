@@ -16,18 +16,18 @@ export function DesignProcess() {
   const [activeStep, setActiveStep] = useState<number | null>(null);
 
   return (
-    <section id="process" className="py-32 md:py-48 border-t border-[#E5E7EB] section-container">
+    <section id="process" className="py-32 md:py-48 border-t border-rule section-container">
       <div className="max-w-3xl mb-16 md:mb-24 space-y-8">
         <RevealText>
           <div className="eyebrow">Methodology</div>
         </RevealText>
         <RevealText delay={80}>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#111827] tracking-[-0.03em] leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink tracking-[-0.03em] leading-tight">
             Design Process
           </h2>
         </RevealText>
         <RevealText delay={160}>
-          <p className="text-[#4B5563] text-base leading-relaxed">
+          <p className="text-ink-soft text-base leading-relaxed">
             A repeatable path from ambiguity to a shipped interface.
           </p>
         </RevealText>
@@ -36,7 +36,7 @@ export function DesignProcess() {
       <RevealText delay={120}>
         <div className="relative">
           {/* Connecting line background */}
-          <div className="hidden lg:block absolute top-[28px] left-0 w-full h-[1px] bg-[#E5E7EB]" />
+          <div className="hidden lg:block absolute top-[6px] left-0 w-full h-[1px] bg-raised" />
           
           <div className="grid grid-cols-1 lg:grid-cols-6 gap-8 lg:gap-4 relative z-10">
             {steps.map((step, index) => (
@@ -46,30 +46,28 @@ export function DesignProcess() {
                 onMouseEnter={() => setActiveStep(index)}
                 onMouseLeave={() => setActiveStep(null)}
               >
-                {/* Node */}
-                <div className="relative shrink-0">
-                  <div className="hidden lg:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-[#FDFDFC] border border-[#E5E7EB] z-0" />
-                  <div className={`relative z-10 w-3 h-3 rounded-full border border-[#9CA3AF] bg-[#FFFFFF] transition-all duration-300 lg:mx-auto mt-2 lg:mt-0 ${
-                    activeStep === index ? 'border-[#2563EB] bg-[#2563EB] shadow-[0_0_12px_rgba(37,99,235,0.6)] scale-125' : 'group-hover:border-[#2563EB]'
+                {index !== steps.length - 1 && (
+                  <div className="block lg:hidden absolute left-1.5 top-[14px] bottom-[-46px] w-[1px] bg-raised" />
+                )}
+
+                <div className="relative shrink-0 lg:self-center">
+                  <div className="hidden lg:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-canvas border border-rule z-0" />
+                  <div className={`relative z-10 w-3 h-3 rounded-full border border-ink-dim bg-surface transition-all duration-300 lg:mx-auto mt-2 lg:mt-0 ${
+                    activeStep === index ? 'border-accent bg-accent shadow-[0_0_16px_rgba(123,140,255,0.45)] scale-125' : 'group-hover:border-accent'
                   }`} />
-                  {/* Mobile connecting line */}
-                  {index !== steps.length - 1 && (
-                    <div className="absolute top-6 left-1.5 bottom-[-32px] w-[1px] bg-[#E5E7EB] lg:hidden" />
-                  )}
                 </div>
 
                 {/* Content */}
-                <div className="flex-1 space-y-2 lg:text-center">
-                  <div className={`font-mono text-xs transition-colors duration-300 ${activeStep === index ? 'text-[#2563EB]' : 'text-[#9CA3AF] group-hover:text-[#4B5563]'}`}>
+                <div className="flex-1 space-y-2 lg:w-full lg:text-center">
+                  <div className={`font-mono text-xs transition-colors duration-300 ${activeStep === index ? 'text-accent' : 'text-ink-dim group-hover:text-ink-soft'}`}>
                     {step.number}
                   </div>
-                  <h3 className={`text-lg font-bold tracking-tight transition-colors duration-300 ${activeStep === index ? 'text-[#111827]' : 'text-[#4B5563] group-hover:text-[#111827]'}`}>
+                  <h3 className={`text-lg font-bold tracking-tight transition-colors duration-300 ${activeStep === index ? 'text-ink' : 'text-ink-soft group-hover:text-ink'}`}>
                     {step.name}
                   </h3>
                   
-                  {/* Artifact reveal on hover */}
-                  <div className={`overflow-hidden transition-all duration-300 ${activeStep === index ? 'max-h-24 opacity-100 mt-3' : 'max-h-0 opacity-0 lg:max-h-24 lg:opacity-100 lg:mt-3'}`}>
-                    <div className="inline-block px-3 py-1.5 rounded bg-[#F3F4F6] border border-[#E5E7EB] text-[10px] font-mono text-[#2563EB] uppercase tracking-widest">
+                  <div className="overflow-hidden max-h-24 opacity-100 mt-3">
+                    <div className="inline-block px-3 py-1.5 rounded bg-raised border border-rule text-[10px] font-mono text-accent uppercase tracking-widest">
                       {step.artifact}
                     </div>
                   </div>

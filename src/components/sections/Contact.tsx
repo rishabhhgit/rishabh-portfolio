@@ -11,11 +11,9 @@ const links = [
 
 export function Contact() {
   const [timeString, setTimeString] = useState("");
-  const [currentYear, setCurrentYear] = useState("");
 
   useEffect(() => {
-    setCurrentYear(new Date().getFullYear().toString());
-    // Update local time
+    // Update local time + year
     const updateTime = () => {
       const now = new Date();
       setTimeString(
@@ -34,26 +32,26 @@ export function Contact() {
   }, []);
 
   return (
-    <section id="contact" className="py-32 md:py-48 border-t border-[#E5E7EB] section-container flex flex-col justify-between min-h-[70vh]">
+    <section id="contact" className="py-32 md:py-48 border-t border-rule section-container flex flex-col justify-between min-h-[70vh]">
       <div className="max-w-4xl space-y-12">
         <RevealText>
           <div className="eyebrow">Contact</div>
         </RevealText>
 
         <RevealText delay={80} className="space-y-6">
-          <h2 className="text-[clamp(2.5rem,5vw,4.5rem)] font-bold text-[#111827] tracking-[-0.03em] leading-tight">
+          <h2 className="text-[clamp(2.5rem,5vw,4.5rem)] font-bold text-ink tracking-[-0.03em] leading-tight">
             Have a product worth designing?
           </h2>
 
-          <p className="text-lg text-[#4B5563] leading-relaxed max-w-2xl">
-            Let's make complex things feel simple. Available for new opportunities in product design and creative development.
+          <p className="text-lg text-ink-soft leading-relaxed max-w-2xl">
+            Let&apos;s make complex things feel simple. Available for new opportunities in product design and creative development.
           </p>
         </RevealText>
 
         <RevealText delay={160}>
           <a
             href="mailto:rishabh.jain9936@gmail.com"
-            className="group inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-[#2563EB] text-[#FDFDFC] font-bold text-base hover:bg-[#1D4ED8] transition-colors duration-300"
+            className="group inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-accent text-canvas font-bold text-base hover:bg-accent-soft transition-colors duration-300"
           >
             Get in touch
             <svg
@@ -76,12 +74,12 @@ export function Contact() {
                 href={link.url}
                 target={link.url.startsWith("mailto") ? undefined : "_blank"}
                 rel={link.url.startsWith("mailto") ? undefined : "noopener noreferrer"}
-                className="group p-5 rounded-xl border border-[#E5E7EB] bg-[#FFFFFF] hover:border-[#2563EB]/40 hover:bg-[#F3F4F6] transition-all duration-300"
+                className="group p-5 rounded-xl border border-rule bg-surface hover:border-accent/40 hover:bg-raised transition-all duration-300"
               >
                 <div className="flex items-center justify-between mb-3">
-                  <div className="text-[10px] font-mono text-[#9CA3AF] uppercase tracking-widest">{link.name}</div>
+                  <div className="text-[10px] font-mono text-ink-dim uppercase tracking-widest">{link.name}</div>
                   <svg
-                    className="w-3 h-3 text-[#9CA3AF] group-hover:text-[#2563EB] transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                    className="w-3 h-3 text-ink-dim group-hover:text-accent transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                     fill="none"
                     viewBox="0 0 12 12"
                     stroke="currentColor"
@@ -90,7 +88,7 @@ export function Contact() {
                     <path d="M1 11L11 1M11 1H4M11 1v7" />
                   </svg>
                 </div>
-                <div className="text-sm font-medium text-[#4B5563] group-hover:text-[#111827] transition-colors truncate">
+                <div className="text-sm font-medium text-ink-soft group-hover:text-ink transition-colors truncate">
                   {link.display}
                 </div>
               </a>
@@ -100,24 +98,24 @@ export function Contact() {
       </div>
 
       <RevealText delay={320}>
-        <div className="pt-20 mt-20 border-t border-[#E5E7EB] flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div className="pt-20 mt-20 border-t border-rule flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div className="flex flex-col gap-1">
-            <span className="text-[13px] font-medium text-[#111827]">
+            <span className="text-[13px] font-medium text-ink">
               Rishabh Jain
             </span>
-            <span className="text-[11px] font-mono text-[#9CA3AF]">
-              © {currentYear || "2024"} — All Rights Reserved
+            <span className="text-[11px] font-mono text-ink-dim">
+              © Rishabh Jain — All Rights Reserved
             </span>
           </div>
           
-          <div className="flex items-center gap-6 text-[11px] font-mono text-[#9CA3AF]">
+          <div className="flex items-center gap-6 text-[11px] font-mono text-ink-dim">
             {timeString && (
               <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#10b981] animate-pulse-subtle" />
+                <span className="w-1.5 h-1.5 rounded-full bg-success animate-pulse-subtle" />
                 Local time: {timeString}
               </div>
             )}
-            <a href="https://leetcode.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#4B5563] transition-colors">
+            <a href="https://leetcode.com" target="_blank" rel="noopener noreferrer" className="hover:text-ink-soft transition-colors">
               LeetCode
             </a>
           </div>

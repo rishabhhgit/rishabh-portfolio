@@ -11,21 +11,21 @@ const featuredRepos = [
 
 export function GitHubSection() {
   return (
-    <section id="github" className="py-32 md:py-48 border-t border-[#E5E7EB] section-container">
+    <section id="github" className="py-32 md:py-48 border-t border-rule section-container">
       <div className="max-w-3xl space-y-10">
         <RevealText>
           <div className="eyebrow">Implementation</div>
         </RevealText>
 
         <RevealText delay={80}>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#111827] tracking-[-0.03em] leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink tracking-[-0.03em] leading-tight">
             Explore the systems behind the interfaces.
           </h2>
         </RevealText>
 
         <RevealText delay={160}>
-          <p className="text-[#4B5563] text-lg leading-relaxed max-w-2xl">
-            The interfaces presented here aren't just Figma prototypes. They are fully implemented systems built with modern frontend architectures.
+          <p className="text-ink-soft text-lg leading-relaxed max-w-2xl">
+            The interfaces presented here aren&apos;t just Figma prototypes. They are fully implemented systems built with modern frontend architectures.
           </p>
         </RevealText>
 
@@ -35,7 +35,7 @@ export function GitHubSection() {
               href="https://github.com/rishabhhgit"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg bg-[#111827] text-[#FDFDFC] font-semibold text-sm hover:bg-[#2563EB] transition-all duration-300"
+              className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg bg-ink text-canvas font-semibold text-sm hover:bg-accent transition-all duration-300"
             >
               Visit GitHub
               <svg
@@ -50,14 +50,14 @@ export function GitHubSection() {
             </a>
 
             <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
-              <span className="text-xs text-[#9CA3AF] font-mono">Featured Repositories:</span>
+              <span className="text-xs text-ink-dim font-mono">Featured Repositories:</span>
               {featuredRepos.map((repo) => (
                 <a
                   key={repo.name}
                   href={repo.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-mono text-xs text-[#4B5563] hover:text-[#2563EB] hover:underline underline-offset-4 decoration-[#2563EB]/30 transition-all duration-300"
+                  className="font-mono text-xs text-ink-soft hover:text-accent hover:underline underline-offset-4 decoration-accent/30 transition-all duration-300"
                 >
                   {repo.name}
                 </a>

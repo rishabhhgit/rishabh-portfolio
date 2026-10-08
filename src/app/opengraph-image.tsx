@@ -1,62 +1,88 @@
-import { ImageResponse } from 'next/og';
+import { ImageResponse } from "next/og";
 
-export const alt = 'Rishabh Jain — UI/UX Designer & Product Designer';
+export const alt = "Rishabh Jain — UI/UX Designer & Creative Developer";
 export const size = { width: 1200, height: 630 };
-export const contentType = 'image/png';
+export const contentType = "image/png";
 
 export default function OpengraphImage() {
   return new ImageResponse(
     (
       <div
         style={{
-          width: '100%',
-          height: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
-          padding: 72,
-          backgroundColor: '#080809',
-          color: '#ffffff',
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          padding: 76,
+          backgroundColor: "#08090B",
+          color: "#F2F2F0",
           backgroundImage:
-            'radial-gradient(circle at 85% -20%, rgba(16,185,129,0.16), transparent 55%)',
+            "radial-gradient(circle at 88% -25%, rgba(123,140,255,0.20), transparent 55%)",
         }}
       >
-        <div style={{ display: 'flex', alignItems: 'center', gap: 18 }}>
-          <div
-            style={{
-              width: 56,
-              height: 56,
-              borderRadius: 14,
-              backgroundColor: '#10b981',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: '#04120c',
-              fontSize: 26,
-              fontWeight: 800,
-            }}
-          >
-            RJ
-          </div>
-          <span style={{ fontSize: 24, color: '#a1a1aa', letterSpacing: 5 }}>
-            RISHABH JAIN
-          </span>
-        </div>
-
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 30 }}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
           <span
             style={{
-              fontSize: 72,
-              fontWeight: 800,
-              lineHeight: 1.06,
-              letterSpacing: -2,
+              fontSize: 22,
+              color: "#797C85",
+              letterSpacing: 5,
+              textTransform: "uppercase",
+            }}
+          >
+            Rishabh Jain
+          </span>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 12,
+              fontSize: 20,
+              color: "#A0A3AB",
+              letterSpacing: 1,
+            }}
+          >
+            <div
+              style={{
+                width: 10,
+                height: 10,
+                borderRadius: 999,
+                backgroundColor: "#7B8CFF",
+              }}
+            />
+            Available for opportunities
+          </div>
+        </div>
+
+        <div
+          style={{ display: "flex", flexDirection: "column", gap: 34 }}
+        >
+          <span
+            style={{
+              fontSize: 78,
+              fontWeight: 600,
+              lineHeight: 1.02,
+              letterSpacing: -3,
             }}
           >
             Designing interfaces for
             <br />
             complex digital products.
           </span>
-          <span style={{ display: 'flex', fontSize: 25, color: '#10b981' }}>
+          <span
+            style={{
+              display: "flex",
+              fontSize: 24,
+              color: "#7B8CFF",
+              letterSpacing: 1,
+            }}
+          >
             UI/UX Designer · Product Designer · Creative Developer
           </span>
         </div>

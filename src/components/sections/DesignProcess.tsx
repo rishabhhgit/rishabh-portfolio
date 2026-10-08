@@ -53,7 +53,7 @@ export function DesignProcess() {
                 <div className="relative shrink-0 lg:self-center">
                   <div className="hidden lg:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-canvas border border-rule z-0" />
                   <div className={`relative z-10 w-3 h-3 rounded-full border border-ink-dim bg-surface transition-all duration-300 lg:mx-auto mt-2 lg:mt-0 ${
-                    activeStep === index ? 'border-accent bg-accent shadow-[0_0_16px_rgba(123,140,255,0.45)] scale-125' : 'group-hover:border-accent'
+                    activeStep === index ? 'border-accent bg-accent shadow-[0_0_16px_rgba(168,127,22,0.45)] scale-125' : 'group-hover:border-accent'
                   }`} />
                 </div>
 

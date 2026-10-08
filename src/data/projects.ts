@@ -69,7 +69,7 @@ export const projects: Project[] = [
       "PTY terminal integration uses native system fonts to maintain visual consistency with the user's environment.",
     ],
     featured: true,
-    accent: "#818cf8",
+    accent: "#8a6410",
     layoutVariant: "full",
   },
   {
@@ -120,7 +120,7 @@ export const projects: Project[] = [
       "Multi-layer caching ensures the interface remains responsive even on slower connections.",
     ],
     featured: true,
-    accent: "#38bdf8",
+    accent: "#0e7490",
     layoutVariant: "split",
   },
   {
@@ -170,7 +170,7 @@ export const projects: Project[] = [
       "Inline validation prevents frustrating runtime errors by catching invalid connections at design time.",
     ],
     featured: true,
-    accent: "#f59e0b",
+    accent: "#b45309",
     layoutVariant: "asymmetric",
   },
   {
@@ -222,7 +222,7 @@ export const projects: Project[] = [
       "AI features are woven into existing modules rather than siloed, making them feel native rather than bolted on.",
     ],
     featured: false,
-    accent: "#10b981",
+    accent: "#4d7c0f",
     layoutVariant: "split",
   },
   {
@@ -265,7 +265,7 @@ export const projects: Project[] = [
       "Transaction history uses consistent formatting so amounts and statuses are scannable at a glance.",
     ],
     featured: false,
-    accent: "#3b82f6",
+    accent: "#8c2f39",
     layoutVariant: "asymmetric",
   },
   {
@@ -308,7 +308,7 @@ export const projects: Project[] = [
       "The filter system uses OR logic within categories and AND logic between categories — matching mental models.",
     ],
     featured: false,
-    accent: "#f43f5e",
+    accent: "#6b2d5b",
     layoutVariant: "full",
   },
 ];

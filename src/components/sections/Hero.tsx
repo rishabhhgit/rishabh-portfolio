@@ -35,7 +35,7 @@ function InterfaceLayers() {
       <div className="absolute right-4 top-8 h-[68%] w-[86%] rounded-lg border border-rule-strong bg-raised/80" />
 
       {/* Front plane — carries a wireframe fragment */}
-      <div className="absolute left-0 bottom-0 h-[72%] w-[92%] rounded-lg border border-rule-strong bg-surface shadow-[0_24px_60px_-20px_rgba(0,0,0,0.8)] overflow-hidden">
+      <div className="absolute left-0 bottom-0 h-[72%] w-[92%] rounded-lg border border-rule-strong bg-surface shadow-[0_24px_60px_-20px_rgba(60,45,20,0.22)] overflow-hidden">
         {/* window chrome */}
         <div className="h-7 border-b border-rule flex items-center gap-1.5 px-3">
           <span className="w-[7px] h-[7px] rounded-full bg-rule-strong" />
@@ -110,7 +110,7 @@ export function Hero() {
       const rows = Math.ceil(h / spacing) + 1;
 
       ctx.lineWidth = 1;
-      ctx.strokeStyle = "rgba(242, 242, 240, 0.028)";
+      ctx.strokeStyle = "rgba(36, 29, 18, 0.055)";
       ctx.beginPath();
       for (let i = 1; i < cols; i++) {
         const x = i * spacing + 0.5;
@@ -128,7 +128,7 @@ export function Hero() {
       const col = Math.floor((time * 6) % cols);
       const row = Math.floor((Math.sin(time * 0.7) * 0.5 + 0.5) * rows);
       const pulse = (Math.sin(time * 4) * 0.5 + 0.5) * 0.4 + 0.08;
-      ctx.fillStyle = `rgba(123, 140, 255, ${pulse})`;
+      ctx.fillStyle = `rgba(168, 127, 22, ${pulse})`;
       ctx.beginPath();
       ctx.arc(col * spacing, row * spacing, 2, 0, Math.PI * 2);
       ctx.fill();
@@ -161,7 +161,7 @@ export function Hero() {
       {/* Very soft accent wash */}
       <div
         aria-hidden="true"
-        className="absolute -top-40 left-1/3 w-[900px] h-[560px] rounded-full bg-[radial-gradient(closest-side,rgba(123,140,255,0.055),transparent)] pointer-events-none"
+        className="absolute -top-40 left-1/3 w-[900px] h-[560px] rounded-full bg-[radial-gradient(closest-side,rgba(201,162,39,0.13),transparent)] pointer-events-none"
       />
 
       <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -191,7 +191,7 @@ export function Hero() {
             variants={childVariants}
             className="display text-[clamp(2.75rem,6.6vw,5.75rem)] text-ink max-w-[15ch]"
           >
-            Designing <span className="text-accent">interfaces</span>
+            Designing <span className="gold-foil">interfaces</span>
             <br className="hidden sm:block" /> for complex digital products.
           </motion.h1>
 

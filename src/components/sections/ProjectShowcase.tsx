@@ -138,13 +138,13 @@ export function ProjectShowcase({ project, index }: ProjectShowcaseProps) {
         <RevealText delay={150} className="md:col-span-4 md:col-start-9 space-y-8 pt-2">
           <div
             className="h-[2px] w-12 rounded-full"
-            style={{ backgroundColor: project.accent || "#7b8cff" }}
+            style={{ backgroundColor: project.accent || "#8a6410" }}
           />
 
           <div className="space-y-2">
             <div
               className="text-[11px] font-mono uppercase tracking-[0.2em]"
-              style={{ color: project.accent || "#7b8cff" }}
+              style={{ color: project.accent || "#8a6410" }}
             >
               Design Decisions
             </div>
@@ -161,7 +161,7 @@ export function ProjectShowcase({ project, index }: ProjectShowcaseProps) {
               >
                 <span
                   className="font-mono text-xs mt-1 shrink-0 opacity-70"
-                  style={{ color: project.accent || "#7b8cff" }}
+                  style={{ color: project.accent || "#8a6410" }}
                 >
                   0{i + 1}
                 </span>

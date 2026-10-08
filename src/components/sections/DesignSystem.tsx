@@ -25,7 +25,7 @@ export function DesignSystem() {
       <RevealText delay={200}>
         <div className="w-full rounded-2xl border border-rule bg-surface p-6 md:p-12 shadow-2xl relative overflow-hidden">
           {/* Subtle grid background */}
-          <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#accent 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
+          <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(rgba(138,100,16,0.9) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
           
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
             

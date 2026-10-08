@@ -7,6 +7,9 @@ import { motion } from "framer-motion";
 import { Project } from "@/data/projects";
 import { CaseStudy } from "@/data/case-studies";
 import { RevealText } from "@/components/ui/RevealText";
+import { InterfaceMap } from "@/components/case-study/InterfaceMap";
+import { StateStrip } from "@/components/case-study/StateStrip";
+import { DetailCrops } from "@/components/case-study/DetailCrops";
 
 const SECTIONS = [
   { id: "overview", number: "01", title: "Overview" },
@@ -14,12 +17,14 @@ const SECTIONS = [
   { id: "context", number: "03", title: "Context" },
   { id: "approach", number: "04", title: "Design Approach" },
   { id: "architecture", number: "05", title: "Information Architecture" },
-  { id: "design-system", number: "06", title: "Design System" },
-  { id: "interface", number: "07", title: "Interface Decisions" },
-  { id: "interaction", number: "08", title: "Interaction Design" },
-  { id: "visual-design", number: "09", title: "Visual Design" },
-  { id: "rationale", number: "10", title: "Design Rationale" },
-  { id: "implementation", number: "11", title: "Technical Implementation" },
+  { id: "interface", number: "06", title: "Interface" },
+  { id: "system", number: "07", title: "Design System" },
+  { id: "decisions", number: "08", title: "Interface Decisions" },
+  { id: "interaction", number: "09", title: "Interaction Design" },
+  { id: "visual-design", number: "10", title: "Visual Design" },
+  { id: "rationale", number: "11", title: "Design Rationale" },
+  { id: "experience", number: "12", title: "Final Experience" },
+  { id: "implementation", number: "13", title: "Technical Implementation" },
 ];
 
 interface CaseStudyViewProps {
@@ -62,7 +67,7 @@ function Section({
 }
 
 export function CaseStudyView({ project, study, nextProject }: CaseStudyViewProps) {
-  const accent = project.accent || "#7b8cff";
+  const accent = project.accent || "#8a6410";
   const [active, setActive] = useState("overview");
 
   useEffect(() => {
@@ -310,8 +315,27 @@ export function CaseStudyView({ project, study, nextProject }: CaseStudyViewProp
               )}
           </Section>
 
-          {/* 06 Design System */}
-          <Section id="design-system" number="06" title="Design System" accent={accent}>
+          {/* 06 Interface */}
+          <Section id="interface" number="06" title="Interface" accent={accent}>
+            <RevealText>
+              <p className="text-base text-ink-soft leading-[1.8] max-w-[64ch] mb-8">
+                The working surface of the product. Each marker names a zone
+                that carries a specific responsibility — hover or focus to
+                trace how the screen is divided.
+              </p>
+            </RevealText>
+            <RevealText delay={80}>
+              <InterfaceMap
+                src={project.image}
+                alt={`${project.title} interface with annotated regions`}
+                callouts={study.callouts}
+                accent={accent}
+              />
+            </RevealText>
+          </Section>
+
+          {/* 07 Design System */}
+          <Section id="system" number="07" title="Design System" accent={accent}>
             <RevealText>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-9">
                 {study.system.map((group) => (
@@ -341,8 +365,8 @@ export function CaseStudyView({ project, study, nextProject }: CaseStudyViewProp
             </RevealText>
           </Section>
 
-          {/* 07 Interface Decisions */}
-          <Section id="interface" number="07" title="Interface Decisions" accent={accent}>
+          {/* 08 Interface Decisions */}
+          <Section id="decisions" number="08" title="Interface Decisions" accent={accent}>
             <RevealText>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {project.interfaceDecisions.map((decision, i) => (
@@ -365,8 +389,8 @@ export function CaseStudyView({ project, study, nextProject }: CaseStudyViewProp
             </RevealText>
           </Section>
 
-          {/* 08 Interaction Design */}
-          <Section id="interaction" number="08" title="Interaction Design" accent={accent}>
+          {/* 09 Interaction Design */}
+          <Section id="interaction" number="09" title="Interaction Design" accent={accent}>
             <RevealText>
               <ul className="space-y-4 max-w-[64ch]">
                 {project.interactionDetails.map((detail, i) => (
@@ -382,10 +406,19 @@ export function CaseStudyView({ project, study, nextProject }: CaseStudyViewProp
                 ))}
               </ul>
             </RevealText>
+
+            <RevealText delay={80}>
+              <div className="mt-10">
+                <div className="font-mono text-[10px] uppercase tracking-[0.16em] text-ink-dim mb-5">
+                  Interface states
+                </div>
+                <StateStrip states={study.states} accent={accent} />
+              </div>
+            </RevealText>
           </Section>
 
-          {/* 09 Visual Design */}
-          <Section id="visual-design" number="09" title="Visual Design" accent={accent}>
+          {/* 10 Visual Design */}
+          <Section id="visual-design" number="10" title="Visual Design" accent={accent}>
             <RevealText>
               <ol className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-8">
                 {study.visualDesign.map((note, i) => (

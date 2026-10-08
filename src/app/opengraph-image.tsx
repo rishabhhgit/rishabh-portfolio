@@ -15,10 +15,10 @@ export default function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: 76,
-          backgroundColor: "#08090B",
-          color: "#F2F2F0",
+          backgroundColor: "#F2ECDD",
+          color: "#241D12",
           backgroundImage:
-            "radial-gradient(circle at 88% -25%, rgba(123,140,255,0.20), transparent 55%)",
+            "radial-gradient(circle at 88% -25%, rgba(201,162,39,0.35), transparent 55%)",
         }}
       >
         <div
@@ -31,7 +31,7 @@ export default function OpengraphImage() {
           <span
             style={{
               fontSize: 22,
-              color: "#797C85",
+              color: "#6F6350",
               letterSpacing: 5,
               textTransform: "uppercase",
             }}
@@ -44,7 +44,7 @@ export default function OpengraphImage() {
               alignItems: "center",
               gap: 12,
               fontSize: 20,
-              color: "#A0A3AB",
+              color: "#574C3A",
               letterSpacing: 1,
             }}
           >
@@ -53,7 +53,7 @@ export default function OpengraphImage() {
                 width: 10,
                 height: 10,
                 borderRadius: 999,
-                backgroundColor: "#7B8CFF",
+                backgroundColor: "#8A6410",
               }}
             />
             Available for opportunities
@@ -79,7 +79,7 @@ export default function OpengraphImage() {
             style={{
               display: "flex",
               fontSize: 24,
-              color: "#7B8CFF",
+              color: "#8A6410",
               letterSpacing: 1,
             }}
           >

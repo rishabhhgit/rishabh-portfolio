@@ -1,31 +1,37 @@
 @import "tailwindcss";
 
 @theme {
-  /* ————— Surfaces ————— */
-  --color-canvas: #08090b;
-  --color-surface: #0d0e11;
-  --color-raised: #121317;
-  --color-tint: #181a1f;
+  /* ————— Surfaces (warm cream paper) ————— */
+  --color-canvas: #f2ecdd;
+  --color-surface: #f9f4e8;
+  --color-raised: #fdfbf4;
+  --color-tint: #fffdf7;
 
-  /* ————— Rules (borders) ————— */
-  --color-rule: #1f2126;
-  --color-rule-soft: #15161a;
-  --color-rule-strong: #2e3138;
+  /* ————— Rules (warm hairlines) ————— */
+  --color-rule: #e0d6c1;
+  --color-rule-soft: #ebe3d1;
+  --color-rule-strong: #c8b99c;
 
-  /* ————— Ink (text) ————— */
-  --color-ink: #f2f2f0;
-  --color-ink-soft: #a0a3ab;
-  --color-ink-dim: #797c85;
-  --color-ink-faint: #3a3d44;
+  /* ————— Ink (warm espresso) ————— */
+  --color-ink: #241d12;
+  --color-ink-soft: #574c3a;
+  --color-ink-dim: #6f6350;
+  --color-ink-faint: #b9ae99;
 
-  /* ————— Accent ————— */
-  --color-accent: #7b8cff;
-  --color-accent-soft: #8d9bff;
+  /* ————— Accent (antique gold) ————— */
+  --color-accent: #8a6410;
+  --color-accent-soft: #6e4f0b;
+  --color-accent-surface: #f2e6c6;
+
+  /* ————— Metallics (decorative only) ————— */
+  --color-gold: #c9a227;
+  --color-gold-bright: #e8c969;
+  --color-gold-deep: #a87f16;
 
   /* ————— Status ————— */
-  --color-success: #34d399;
-  --color-warning: #fbbf24;
-  --color-danger: #f87171;
+  --color-success: #1a7a4a;
+  --color-warning: #9a5b00;
+  --color-danger: #b3261e;
 
   --font-sans: var(--font-instrument), -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, sans-serif;
@@ -44,7 +50,7 @@
   }
 
   html {
-    color-scheme: dark;
+    color-scheme: light;
     scroll-behavior: smooth;
     scroll-padding-top: 6rem;
     -webkit-font-smoothing: antialiased;
@@ -61,8 +67,8 @@
   }
 
   ::selection {
-    background-color: rgba(123, 140, 255, 0.32);
-    color: #ffffff;
+    background-color: rgba(201, 162, 39, 0.34);
+    color: var(--color-ink);
   }
 
   h1,
@@ -89,12 +95,12 @@
     background: var(--color-canvas);
   }
   ::-webkit-scrollbar-thumb {
-    background: var(--color-rule);
+    background: #c2a35f;
     border: 3px solid var(--color-canvas);
     border-radius: 999px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--color-rule-strong);
+    background: var(--color-gold-deep);
   }
 }
 
@@ -141,6 +147,23 @@
     text-wrap: balance;
   }
 
+  /* ————— Gold foil display type ————— */
+  .gold-foil {
+    background-image: linear-gradient(
+      100deg,
+      var(--color-accent) 0%,
+      var(--color-gold-deep) 26%,
+      var(--color-gold) 48%,
+      var(--color-gold-bright) 62%,
+      var(--color-gold-deep) 84%,
+      var(--color-accent) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
   /* ————— Tech tag ————— */
   .tech-tag {
     display: inline-flex;
@@ -164,7 +187,7 @@
   /* ————— Patterns ————— */
   .dot-pattern {
     background-image: radial-gradient(
-      rgba(123, 140, 255, 0.07) 1px,
+      rgba(138, 100, 16, 0.12) 1px,
       transparent 1px
     );
     background-size: 32px 32px;
@@ -224,8 +247,10 @@
     background: linear-gradient(
       90deg,
       transparent,
-      var(--color-rule) 20%,
-      var(--color-rule) 80%,
+      var(--color-gold) 12%,
+      var(--color-rule) 34%,
+      var(--color-rule) 66%,
+      var(--color-gold) 88%,
       transparent
     );
   }

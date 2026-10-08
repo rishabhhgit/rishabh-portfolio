@@ -69,7 +69,7 @@ const RAMP = [
   { hex: "#f9f4e8", name: "surface" },
   { hex: "#fdfbf4", name: "raised" },
   { hex: "#e0d6c1", name: "rule" },
-  { hex: "#6f6350", name: "ink-dim" },
+  { hex: "#5d5342", name: "ink-dim" },
   { hex: "#241d12", name: "ink" },
   { hex: "#8a6410", name: "accent" },
 ];

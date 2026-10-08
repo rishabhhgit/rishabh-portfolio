@@ -4,7 +4,7 @@ import React from "react";
 import { CaseStudyState } from "@/data/case-studies";
 
 const TONE: Record<CaseStudyState["tone"], { dot: string; ring: string }> = {
-  idle: { dot: "#6f6350", ring: "rgba(111,99,80,0.28)" },
+  idle: { dot: "#5d5342", ring: "rgba(93,83,66,0.28)" },
   active: { dot: "#8a6410", ring: "rgba(138,100,16,0.32)" },
   success: { dot: "#1a7a4a", ring: "rgba(26,122,74,0.28)" },
   error: { dot: "#b3261e", ring: "rgba(179,38,30,0.28)" },
@@ -47,7 +47,7 @@ export function StateStrip({ states, accent }: StateStripProps) {
                   style={{
                     backgroundColor: tone.dot,
                     transform:
-                      s.tone === "idle" ? "translateX(0)" : "translateX(14px)",
+                      s.tone === "idle" ? "translateX(0)" : "translateX(16px)",
                   }}
                 />
               </span>

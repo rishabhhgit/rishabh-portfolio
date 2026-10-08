@@ -22,7 +22,7 @@ const principles = [
   {
     number: "04",
     title: "Build what you design.",
-    description: "Understanding React render cycles, CSS grid constraints, DOM state management, and browser performance keeps design decisions technically realistic and performant."
+    description: "Full-stack from schema to pixel — React, Node, and the APIs between them — keeps design decisions technically realistic. LLMs like Claude clear the boilerplate; I keep the judgment."
   }
 ];
 

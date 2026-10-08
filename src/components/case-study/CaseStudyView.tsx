@@ -436,8 +436,8 @@ export function CaseStudyView({ project, study, nextProject }: CaseStudyViewProp
             </RevealText>
           </Section>
 
-          {/* 10 Design Rationale */}
-          <Section id="rationale" number="10" title="Design Rationale" accent={accent}>
+          {/* 11 Design Rationale */}
+          <Section id="rationale" number="11" title="Design Rationale" accent={accent}>
             {project.designRationale && project.designRationale.length > 0 && (
               <RevealText>
                 <ul className="space-y-5 max-w-[64ch]">
@@ -454,10 +454,21 @@ export function CaseStudyView({ project, study, nextProject }: CaseStudyViewProp
             )}
           </Section>
 
-          {/* 11 Technical Implementation */}
+          {/* 12 Final Experience */}
+          <Section id="experience" number="12" title="Final Experience" accent={accent}>
+            <RevealText>
+              <p className="text-base text-ink-soft leading-[1.8] max-w-[64ch] mb-8">
+                Three moments from the shipped interface, shown at the scale
+                they are actually used at.
+              </p>
+            </RevealText>
+            <DetailCrops details={study.details} accent={accent} />
+          </Section>
+
+          {/* 13 Technical Implementation */}
           <Section
             id="implementation"
-            number="11"
+            number="13"
             title="Technical Implementation"
             accent={accent}
           >

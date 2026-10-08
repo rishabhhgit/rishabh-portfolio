@@ -4,10 +4,10 @@ import React from "react";
 import { CaseStudyState } from "@/data/case-studies";
 
 const TONE: Record<CaseStudyState["tone"], { dot: string; ring: string }> = {
-  idle: { dot: "#797c85", ring: "rgba(121,124,133,0.28)" },
-  active: { dot: "#7b8cff", ring: "rgba(123,140,255,0.32)" },
-  success: { dot: "#34d399", ring: "rgba(52,211,153,0.28)" },
-  error: { dot: "#f87171", ring: "rgba(248,113,113,0.28)" },
+  idle: { dot: "#6f6350", ring: "rgba(111,99,80,0.28)" },
+  active: { dot: "#8a6410", ring: "rgba(138,100,16,0.32)" },
+  success: { dot: "#1a7a4a", ring: "rgba(26,122,74,0.28)" },
+  error: { dot: "#b3261e", ring: "rgba(179,38,30,0.28)" },
 };
 
 interface StateStripProps {

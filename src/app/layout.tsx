@@ -20,9 +20,9 @@ const jetbrainsMono = JetBrains_Mono({
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://rishabh-portfolio.vercel.app";
 
-const title = "Rishabh Jain — UI/UX Designer & Creative Developer";
+const title = "Rishabh Jain — UI/UX Designer & Full-Stack Developer";
 const description =
-  "UI/UX and product design portfolio of Rishabh Jain, focused on thoughtful interfaces for AI products, developer tools, real-time systems and data-driven applications.";
+  "Portfolio of Rishabh Jain — a UI/UX-focused full-stack developer building backend and AI products: clear interfaces for developer tools, real-time systems and data platforms, shipped with LLM-assisted workflows.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -30,8 +30,10 @@ export const metadata: Metadata = {
   description,
   keywords: [
     "UI/UX Designer",
+    "Full Stack Developer",
+    "Backend Developer",
+    "AI Developer",
     "Product Designer",
-    "Creative Developer",
     "Interaction Design",
     "Design Portfolio",
     "Rishabh Jain",
@@ -40,7 +42,7 @@ export const metadata: Metadata = {
   openGraph: {
     title,
     description:
-      "Designing interfaces for complex digital products — AI tools, developer environments, real-time systems, and data-driven platforms.",
+      "UI/UX-focused full-stack developer — interface, backend and AI in one product.",
     type: "website",
     locale: "en_US",
     url: SITE_URL,
@@ -50,7 +52,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description:
-      "Designing interfaces for complex digital products — AI tools, developer environments, real-time systems, and data-driven platforms.",
+      "UI/UX-focused full-stack developer — interface, backend and AI in one product.",
   },
   robots: {
     index: true,

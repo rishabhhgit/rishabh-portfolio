@@ -44,7 +44,7 @@ export function Contact() {
           </h2>
 
           <p className="text-lg text-ink-soft leading-relaxed max-w-2xl">
-            Let&apos;s make complex things feel simple. Available for new opportunities in product design and creative development.
+            Let&apos;s make complex things feel simple. Open to UI/UX and full-stack product work — interface first, backend and AI when it counts.
           </p>
         </RevealText>
 

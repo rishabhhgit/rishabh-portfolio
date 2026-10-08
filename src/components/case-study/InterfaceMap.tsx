@@ -62,7 +62,7 @@ export function InterfaceMap({ src, alt, callouts, accent }: InterfaceMapProps) 
                   style={{
                     borderColor: on ? accent : "rgba(242,242,240,0.45)",
                     backgroundColor: on ? accent : "rgba(8,9,11,0.72)",
-                    color: on ? "#08090b" : "#f2f2f0",
+                    color: "#f2ecdd",
                     transform: on ? "scale(1.18)" : "scale(1)",
                     boxShadow: on ? `0 0 0 6px ${accent}26` : "none",
                   }}

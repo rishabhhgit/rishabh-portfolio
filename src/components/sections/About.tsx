@@ -4,11 +4,11 @@ import React from "react";
 import { RevealText } from "@/components/ui/RevealText";
 
 const focusAreas = [
-  "AI products & copilots",
-  "Developer tools & IDEs",
-  "Real-time data visualization",
-  "Geospatial interfaces",
-  "Workflow automation",
+  "Interface & interaction design",
+  "Design systems & tokens",
+  "Backend & API architecture",
+  "AI products & LLM workflows",
+  "Real-time dashboards",
 ];
 
 export function About() {
@@ -23,13 +23,13 @@ export function About() {
 
           <RevealText delay={80}>
             <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] font-bold text-ink tracking-[-0.03em] leading-[1.15]">
-              I&apos;m Rishabh — a UI/UX-focused designer and developer interested in turning complex technical systems into clear, intuitive digital experiences.
+              I&apos;m Rishabh — a full-stack developer focused on UI/UX, backend, and AI.
             </h2>
           </RevealText>
 
           <RevealText delay={160}>
             <p className="text-ink-soft text-lg leading-[1.7] max-w-2xl">
-              I operate at the intersection of product thinking and engineering. My work focuses on environments where clarity is difficult to achieve — AI-assisted tools, dense real-time dashboards, and multi-layered geospatial views.
+              I start in the interface and finish in production — designing screens, shaping the APIs behind them, and wiring in AI. LLMs like Claude clear the boilerplate, so the time goes into decisions instead of typing.
             </p>
           </RevealText>
         </div>

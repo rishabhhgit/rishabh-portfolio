@@ -175,13 +175,13 @@ export function Hero() {
           <motion.div variants={childVariants}>
             <div className="inline-flex items-center gap-2 text-[11px] font-mono tracking-[0.16em] text-ink-dim">
               <span className="uppercase">
-                UI/UX
+                UI/UX Design
                 <span className="text-ink-faint mx-1.5">·</span>
-                Product Design
+                Full-Stack
                 <span className="text-ink-faint mx-1.5">·</span>
-                Interaction Design
+                Backend
                 <span className="text-ink-faint mx-1.5">·</span>
-                Creative Development
+                AI &amp; LLM Tooling
               </span>
             </div>
           </motion.div>
@@ -200,9 +200,9 @@ export function Hero() {
             variants={childVariants}
             className="text-base sm:text-lg text-ink-soft font-normal leading-[1.75] max-w-[54ch]"
           >
-            I design and build interfaces for AI products, developer tools,
-            real-time systems, and data-driven platforms — turning complex
-            technology into clear, considered experiences.
+            UI/UX-focused full-stack developer. I design the interface, own the
+            backend, and use LLMs like Claude to keep shipping — so complex
+            products stay clear.
           </motion.p>
 
           {/* CTAs */}

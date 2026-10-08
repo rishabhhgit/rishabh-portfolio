@@ -19,13 +19,13 @@ export function GitHubSection() {
 
         <RevealText delay={80}>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink tracking-[-0.03em] leading-tight">
-            Explore the systems behind the interfaces.
+            Designed, built, and shipped.
           </h2>
         </RevealText>
 
         <RevealText delay={160}>
           <p className="text-ink-soft text-lg leading-relaxed max-w-2xl">
-            The interfaces presented here aren&apos;t just Figma prototypes. They are fully implemented systems built with modern frontend architectures.
+            Not Figma mocks — production systems. UI, backend, and AI integration in one codebase.
           </p>
         </RevealText>
 

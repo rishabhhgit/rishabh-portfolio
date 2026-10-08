@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Rishabh Jain — UI/UX Designer & Full-Stack Developer";
+export const alt = "Rishabh Jain — UI/UX Designer & Creative Developer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -31,7 +31,7 @@ export default function OpengraphImage() {
           <span
             style={{
               fontSize: 22,
-              color: "#6F6350",
+              color: "#5D5342",
               letterSpacing: 5,
               textTransform: "uppercase",
             }}
@@ -44,7 +44,7 @@ export default function OpengraphImage() {
               alignItems: "center",
               gap: 12,
               fontSize: 20,
-              color: "#574C3A",
+              color: "#4B4133",
               letterSpacing: 1,
             }}
           >
@@ -83,7 +83,7 @@ export default function OpengraphImage() {
               letterSpacing: 1,
             }}
           >
-            UI/UX Designer · Full-Stack Developer · Backend & AI
+            UI/UX · Product Design · Interaction Design · Creative Development
           </span>
         </div>
       </div>

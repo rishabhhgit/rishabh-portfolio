@@ -26,7 +26,7 @@ const principles = [
     number: "04",
     title: "Build what you design.",
     description:
-      "Shipping to production keeps every design decision technically realistic.",
+      "Shipping to production — React, Node, and the APIs between them — keeps every design decision technically realistic. LLMs clear the boilerplate; the judgment stays mine.",
   },
 ];
 

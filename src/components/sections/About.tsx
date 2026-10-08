@@ -27,13 +27,13 @@ export function About() {
 
           <RevealText delay={80}>
             <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] font-bold text-ink tracking-[-0.03em] leading-[1.15]">
-              I&apos;m Rishabh — a UI/UX and product designer who builds what I design.
+              I&apos;m Rishabh — a UI/UX and full-stack designer who builds what I design.
             </h2>
           </RevealText>
 
           <RevealText delay={160}>
             <p className="text-ink-soft text-lg leading-[1.7] max-w-2xl">
-              I start in the interface and finish in production — designing screens, shaping the structure behind them, and shipping the result. Most of the effort goes into decisions, not decoration.
+              I start in the interface and finish in production — designing screens, shaping the structure behind them (APIs, data models, LLM integration), and shipping the result. Most of the effort goes into decisions, not decoration.
             </p>
           </RevealText>
 

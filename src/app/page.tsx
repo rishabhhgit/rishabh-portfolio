@@ -18,7 +18,8 @@ export default function Home() {
           "UI/UX Design",
           "Product Design",
           "Design Systems",
-          "Interaction Design",
+          "Backend & APIs",
+          "AI / LLM Integration",
           "Creative Development",
         ]}
       />
@@ -34,9 +35,9 @@ export default function Home() {
           "Developer Tools",
           "Real-Time Systems",
           "Data Platforms",
+          "Backend Architecture",
           "AI Interfaces",
-          "Workflow Engines",
-          "Editor Experiences",
+          "LLM Workflows",
         ]}
       />
 
@@ -49,9 +50,9 @@ export default function Home() {
         reverse
         speed={38}
         items={[
-          "Open to UI/UX roles",
-          "Interface first",
-          "Case studies over screenshots",
+          "Open to UI/UX & full-stack roles",
+          "Interface first, backend when it counts",
+          "AI / LLM in production",
           "Say hello before overthinking it",
         ]}
       />

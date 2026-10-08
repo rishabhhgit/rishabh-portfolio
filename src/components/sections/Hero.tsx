@@ -184,7 +184,9 @@ export function Hero() {
                 <span className="text-ink-faint mx-1.5">·</span>
                 Interaction Design
                 <span className="text-ink-faint mx-1.5">·</span>
-                Creative Development
+                Backend
+                <span className="text-ink-faint mx-1.5">·</span>
+                AI / LLM
               </span>
             </div>
           </motion.div>
@@ -203,10 +205,10 @@ export function Hero() {
             variants={childVariants}
             className="text-base sm:text-lg text-ink-soft font-normal leading-[1.75] max-w-[54ch]"
           >
-            UI/UX and product designer. I shape interfaces for complex
-            software — developer tools, real-time systems, data platforms —
-            and carry them through to production, so the design survives the
-            build.
+            UI/UX and product designer working full-stack. I shape interfaces
+            for complex software — developer tools, real-time systems, data
+            platforms — then build them through the backend and AI/LLM layer,
+            so the design survives the build.
           </motion.p>
 
           {/* CTAs */}

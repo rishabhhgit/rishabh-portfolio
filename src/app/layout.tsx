@@ -3,6 +3,9 @@ import { Instrument_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/layout/Navigation";
 import { MotionProvider } from "@/components/layout/MotionProvider";
+import Preloader from "@/components/layout/Preloader";
+import SectionRail from "@/components/layout/SectionRail";
+import Cursor from "@/components/layout/Cursor";
 
 const instrumentSans = Instrument_Sans({
   subsets: ["latin"],
@@ -78,6 +81,9 @@ export default function RootLayout({
         <MotionProvider>
           {/* Film-grain texture overlay */}
           <div className="grain-overlay" aria-hidden="true" />
+          <Preloader />
+          <Cursor />
+          <SectionRail />
           <Navigation />
           <main>{children}</main>
         </MotionProvider>

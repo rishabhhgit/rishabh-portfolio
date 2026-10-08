@@ -32,10 +32,14 @@ export function Contact() {
   }, []);
 
   return (
-    <section id="contact" className="py-32 md:py-48 border-t border-rule section-container flex flex-col justify-between min-h-[70vh]">
-      <div className="max-w-4xl space-y-12">
+    <section id="contact" className="py-20 md:py-28 border-t border-rule section-container flex flex-col justify-between min-h-[56vh]">
+      <div className="max-w-4xl space-y-8">
         <RevealText>
-          <div className="eyebrow">Contact</div>
+          <div className="eyebrow">
+            <span className="text-accent">06</span>
+            <span className="mx-2 text-rule-strong">—</span>
+            Contact
+          </div>
         </RevealText>
 
         <RevealText delay={80} className="space-y-6">
@@ -44,13 +48,14 @@ export function Contact() {
           </h2>
 
           <p className="text-lg text-ink-soft leading-relaxed max-w-2xl">
-            Let&apos;s make complex things feel simple. Open to UI/UX and full-stack product work — interface first, backend and AI when it counts.
+            Let&apos;s make complex things feel simple. Open to UI/UX and product design work — interface first, everything else when it counts.
           </p>
         </RevealText>
 
         <RevealText delay={160}>
           <a
             href="mailto:rishabh.jain9936@gmail.com"
+            data-cursor="Say hi"
             className="group inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-accent text-canvas font-bold text-base hover:bg-accent-soft transition-colors duration-300"
           >
             Get in touch
@@ -106,6 +111,7 @@ export function Contact() {
             <span className="text-[11px] font-mono text-ink-dim">
               © Rishabh Jain — All Rights Reserved
             </span>
+            <span className="aside-note pt-2">Bye — thanks for scrolling this far</span>
           </div>
           
           <div className="flex items-center gap-6 text-[11px] font-mono text-ink-dim">

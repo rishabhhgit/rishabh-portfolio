@@ -203,6 +203,50 @@
     background-size: 96px 96px;
   }
 
+  /* ————— Ticker band ————— */
+  .marquee-band {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    flex-shrink: 0;
+    will-change: transform;
+    animation: marquee var(--marquee-speed, 46s) linear infinite;
+  }
+
+  .marquee-band:hover .marquee-track {
+    animation-play-state: paused;
+  }
+
+  /* ————— Margin aside (micro-copy) ————— */
+  .aside-note {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    line-height: 1.4;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-ink-faint);
+  }
+
+  .aside-note::before {
+    content: "//";
+    color: var(--color-gold);
+  }
+
+  /* ————— Custom cursor ————— */
+  body.cursor-hidden,
+  body.cursor-hidden a,
+  body.cursor-hidden button,
+  body.cursor-hidden [role="button"] {
+    cursor: none !important;
+  }
+
   /* ————— Animations ————— */
   .animate-fade-up {
     animation: fade-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
@@ -309,10 +353,24 @@
   }
 }
 
+@keyframes marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
 /* ————— Reduced motion (unlayered + important: always wins) ————— */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .marquee-track {
+    animation: none !important;
+    transform: none !important;
   }
 
   *,

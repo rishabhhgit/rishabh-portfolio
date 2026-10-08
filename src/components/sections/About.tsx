@@ -13,12 +13,16 @@ const focusAreas = [
 
 export function About() {
   return (
-    <section id="about" className="py-32 md:py-48 border-t border-rule section-container">
+    <section id="about" className="py-20 md:py-28 border-t border-rule section-container">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
         {/* Main statement */}
-        <div className="lg:col-span-7 space-y-12">
+        <div className="lg:col-span-7 space-y-8">
           <RevealText>
-            <div className="eyebrow">About</div>
+            <div className="eyebrow">
+              <span className="text-accent">05</span>
+              <span className="mx-2 text-rule-strong">—</span>
+              About
+            </div>
           </RevealText>
 
           <RevealText delay={80}>
@@ -32,10 +36,14 @@ export function About() {
               I start in the interface and finish in production — designing screens, shaping the structure behind them, and shipping the result. Most of the effort goes into decisions, not decoration.
             </p>
           </RevealText>
+
+          <RevealText delay={240}>
+            <span className="aside-note">Still figuring it out</span>
+          </RevealText>
         </div>
 
         {/* Metadata columns */}
-        <div className="lg:col-span-4 lg:col-start-9 space-y-12">
+        <div className="lg:col-span-4 lg:col-start-9 space-y-8">
           <RevealText delay={200} className="space-y-5">
             <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-dim border-b border-rule pb-3">Focus Areas</div>
             <ul className="space-y-3">

@@ -150,7 +150,10 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-[92vh] flex flex-col justify-center pt-32 pb-24 section-container overflow-hidden">
+    <section
+      id="home"
+      className="relative min-h-[86vh] flex flex-col justify-center pt-28 pb-16 section-container overflow-hidden"
+    >
       {/* Animated grid canvas */}
       <canvas
         ref={canvasRef}
@@ -213,6 +216,7 @@ export function Hero() {
           >
             <a
               href="#work"
+              data-cursor="Scroll to work"
               className="group inline-flex items-center gap-2.5 px-6 py-3.5 rounded-lg bg-ink text-canvas font-semibold text-sm tracking-[0.01em] hover:bg-accent transition-colors duration-300"
             >
               Explore selected work
@@ -271,6 +275,9 @@ export function Hero() {
         <div className="w-[1px] h-10 bg-gradient-to-b from-transparent via-rule-strong to-transparent relative overflow-hidden">
           <div className="absolute w-full h-3 bg-accent/60 animate-[drift_2.6s_ease-in-out_infinite]" />
         </div>
+        <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-ink-faint">
+          Go on, scroll down
+        </span>
       </motion.div>
     </section>
   );

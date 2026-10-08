@@ -12,11 +12,15 @@ const secondaryProjects = projects.filter((p) => !p.featured);
 
 export function SelectedWork() {
   return (
-    <section id="work" className="py-32 md:py-48 section-container">
+    <section id="work" className="py-20 md:py-28 section-container">
       {/* Section header */}
-      <div className="mb-20 md:mb-28 space-y-8">
+      <div className="mb-12 md:mb-16 space-y-5">
         <RevealText>
-          <div className="eyebrow">Selected Work</div>
+          <div className="eyebrow">
+            <span className="text-accent">01</span>
+            <span className="mx-2 text-rule-strong">—</span>
+            Selected Work
+          </div>
         </RevealText>
         <RevealText delay={80}>
           <h2 className="text-[clamp(2rem,4.5vw,3.5rem)] font-bold text-ink tracking-[-0.03em] leading-[1.1] max-w-[20ch]">
@@ -29,10 +33,16 @@ export function SelectedWork() {
             platforms — products where the interface <em>is</em> the hard part.
           </p>
         </RevealText>
+
+        <RevealText delay={240}>
+          <div className="flex justify-end pt-2">
+            <span className="aside-note">Short on time? The set piece is one scroll down</span>
+          </div>
+        </RevealText>
       </div>
 
       {/* Featured projects — editorial stack with unique layouts */}
-      <div className="space-y-40 md:space-y-56">
+      <div className="space-y-24 md:space-y-32">
         {featuredProjects.map((project, index) => (
           <div key={project.id} id={`project-${project.id}`} className="scroll-mt-28">
             <ProjectShowcase project={project} index={index} />
@@ -41,9 +51,9 @@ export function SelectedWork() {
       </div>
 
       {/* Secondary projects — asymmetric grid */}
-      <div className="mt-40 md:mt-56 pt-20 border-t border-rule">
+      <div className="mt-24 md:mt-32 pt-12 border-t border-rule">
         <RevealText>
-          <div className="mb-16 space-y-4">
+          <div className="mb-9 space-y-3">
             <div className="eyebrow">Additional Work</div>
             <h3 className="text-2xl md:text-3xl font-bold text-ink tracking-tight">
               More product explorations
@@ -56,6 +66,7 @@ export function SelectedWork() {
             <RevealText key={project.id} delay={i * 100} className="h-full">
               <Link
                 href={`/work/${project.id}`}
+                data-cursor="View case"
                 className="group flex h-full flex-col rounded-xl border border-rule bg-surface overflow-hidden hover:border-rule-strong transition-all duration-500"
               >
                 {/* Image */}

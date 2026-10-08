@@ -84,10 +84,17 @@ const NAV_ITEMS = [
 
 export function DesignSystem() {
   return (
-    <section className="py-32 md:py-48 border-t border-rule section-container">
-      <div className="max-w-3xl mb-16 md:mb-20 space-y-8">
+    <section
+      id="system"
+      className="py-20 md:py-28 border-t border-rule section-container"
+    >
+      <div className="max-w-3xl mb-9 md:mb-12 space-y-5">
         <RevealText>
-          <div className="eyebrow">Design Systems</div>
+          <div className="eyebrow">
+            <span className="text-accent">04</span>
+            <span className="mx-2 text-rule-strong">—</span>
+            Design Systems
+          </div>
         </RevealText>
         <RevealText delay={80}>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink tracking-[-0.03em] leading-tight max-w-[18ch]">

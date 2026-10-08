@@ -94,7 +94,7 @@ export function CaseStudyView({ project, study, nextProject }: CaseStudyViewProp
   return (
     <article className="pb-32">
       {/* ── Hero ───────────────────────────────────────────── */}
-      <header className="section-container pt-32 md:pt-44 pb-16">
+      <header className="section-container pt-28 md:pt-36 pb-12">
         <RevealText>
           <nav aria-label="Breadcrumb" className="mb-10">
             <Link
@@ -181,7 +181,7 @@ export function CaseStudyView({ project, study, nextProject }: CaseStudyViewProp
       </header>
 
       {/* ── Body ───────────────────────────────────────────── */}
-      <div className="section-container grid grid-cols-1 lg:grid-cols-[190px_minmax(0,1fr)] gap-x-16 gap-y-12">
+      <div className="section-container grid grid-cols-1 lg:grid-cols-[190px_minmax(0,1fr)] gap-x-16 gap-y-9">
         {/* Sticky index */}
         <aside className="hidden lg:block">
           <nav

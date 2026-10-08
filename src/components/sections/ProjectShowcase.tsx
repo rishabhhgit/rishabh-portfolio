@@ -34,6 +34,7 @@ export function ProjectShowcase({ project, index }: ProjectShowcaseProps) {
       <Link
         href={href}
         aria-label={`Open ${project.title} case study`}
+        data-cursor="View case"
         className="group relative block rounded-xl overflow-hidden border border-rule bg-surface"
       >
         <div className="relative aspect-[16/9] w-full overflow-hidden">

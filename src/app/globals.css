@@ -239,14 +239,6 @@
     color: var(--color-gold);
   }
 
-  /* ————— Custom cursor ————— */
-  body.cursor-hidden,
-  body.cursor-hidden a,
-  body.cursor-hidden button,
-  body.cursor-hidden [role="button"] {
-    cursor: none !important;
-  }
-
   /* ————— Animations ————— */
   .animate-fade-up {
     animation: fade-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;

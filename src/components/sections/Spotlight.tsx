@@ -67,7 +67,6 @@ export function Spotlight() {
         <RevealText delay={80} className="mt-10 md:mt-14">
           <Link
             href={`/work/${project.id}`}
-            data-cursor="Enter case"
             className="group block relative w-full overflow-hidden rounded-lg border border-gold/30 bg-black/40"
           >
             <div className="relative aspect-[16/9] sm:aspect-[2/1] w-full">

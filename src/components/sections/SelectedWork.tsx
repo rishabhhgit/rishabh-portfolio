@@ -66,7 +66,6 @@ export function SelectedWork() {
             <RevealText key={project.id} delay={i * 100} className="h-full">
               <Link
                 href={`/work/${project.id}`}
-                data-cursor="View case"
                 className="group flex h-full flex-col rounded-xl border border-rule bg-surface overflow-hidden hover:border-rule-strong transition-all duration-500"
               >
                 {/* Image */}

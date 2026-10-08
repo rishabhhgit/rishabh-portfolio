@@ -55,7 +55,6 @@ export function Contact() {
         <RevealText delay={160}>
           <a
             href="mailto:rishabh.jain9936@gmail.com"
-            data-cursor="Say hi"
             className="group inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-accent text-canvas font-bold text-base hover:bg-accent-soft transition-colors duration-300"
           >
             Get in touch

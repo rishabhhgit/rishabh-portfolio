@@ -218,7 +218,6 @@ export function Hero() {
           >
             <a
               href="#work"
-              data-cursor="Scroll to work"
               className="group inline-flex items-center gap-2.5 px-6 py-3.5 rounded-lg bg-ink text-canvas font-semibold text-sm tracking-[0.01em] hover:bg-accent transition-colors duration-300"
             >
               Explore selected work
